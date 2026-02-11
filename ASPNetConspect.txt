@@ -6424,7 +6424,7 @@ public IActionResult Index()	--	маршрути | сторінка
 	HomeController	--	Шукає у Views по назві папку Home
 
 
-🔷Структура ControllerName/ViewName
+🔷СТРУКТУРА ControllerName/ViewName
 
 Приклад:
 	Controllers -> productConroller
@@ -6521,3 +6521,201 @@ Lazy loading	--	автоматичне від EF
 Жадібне loading	-- все зразу (товари і за ними категорії)
 Явне loading	-- те саме що й lazy тільки ми робимо
 	
+
+----------------------------------------------
+02_IntroToASP.NET	
+	
+	
+Dependecy injection -- 	автоматично виконує update-database
+	
+	
+//Controllers -> HomeController	(Плануємо виводи товаруи у вкладці Home)
+
+❌	private readonly AppDbContext _context;	
+	
+ public HomeController(ILogger<HomeController> logger, AppDbContext context)
+ {
+	_logger = logger;
+	_context = context;	--	ініціалізуємо змінну
+ }	
+ 
+	//Метод який викликає Інтерфейс описує HTTP
+public IActionResult Index()
+{
+	var products = context.Products.ToList();	--	щоб вивести продукти
+	return View();
+} 
+ 
+ 
+ 
+builder.Services.AddDbContext<AppDbContext>(options =>
+{		//	створення AddDbContext 
+ 
+ 
+ 
+✅ Repositories	--	класи які працюють з DbContext 
+ 
+ builder.Services.AddControllersWith Views();	--	метод щоб прописати контроллери
+ 
+ 
+//Не правильно давати контроллеру DbContext тому 
+	Repositories методи для роботи з ДБ і Controller буде використ Repositories
+ 
+ 
+ public class ProductRepostitory {
+	private readonly AppDbContext _context;
+	
+	public ProductRepostitory (AppDbContext context)
+	{
+		_context = context;
+	}
+	
+	public async Task<IQueryable> GetProductsAsync()
+	{
+					//наша таблиця		//слідкує чи змінені дані
+		return _context.Products.AsNoTracking();
+	}
+
+ 
+==HomeController
+ 
+private readonly ProductRepostitory _productRepostitory;
+
+ public HomeController(ILogger<HomeController> logger, productRepostitory productRepostitory)
+{
+	_logger = logger;
+	_productRepostitory productRepostitory;
+}
+ 
+public IActionResult Index()
+ {
+	var products = productRepostitory.GetProductsAsync().Result;
+ }
+ 
+
+==Program.cs --налаштування проекту будуть прописані класи які 
+	будумо використовувати, а вони будуть прописані у builder.Services
+
+
+--Клас у Dependecy Injection щоб міг автоматично створюватись
+
+builder.Services.AddSingleton()	--	екземпляр класу в 1, тільки 1 об'єкт класу
+builder.Services.AddTransient(); // об'єкт класу буде створюватися при кожному використанні
+builder.Services.AddScoped(); // об'єкт класу при запиті get і видалятись
+
+
+🟧builder. Services.AddScoped
+<ProductRepostitory>();	--	вказуємо щоб вони могли створювати класи при виклику без передачі у props
+	-- у HomeController передати як пропс (ProductRepostitory productRepostitory)
+		без нього вони неможуть створити productRepostitory бо незнають що це
+
+Var context = new AppDbContext(null); 
+(context);	-- типу так працює | передає AppDbContext
+
+
+HomeController	--	маршрут, переправляє користувача на HTML 
+						сторінку відповідно до маршруту
+		ВХІДНА точка для користувача
+
+//робота контроллерів ПРИБЛИЗНО коли User заходить на сайт
+
+		--
+	var context = new AppDbContext(null);
+	var product = new ProductRepostitory(context);
+	var logger = new Logger<HomeController>();
+		--	все створиться автоматично якщо є AddScoped
+			 🟢Dependecy Injection Роблять цю всю роботу
+
+   var home = new HomeController(logger, product);
+   home.AboutUs();
+//
+
+Action -- сторінки (HTML)
+
+==Отримання класу з DI
+
+
+✅Цей варіант кращем ти що можна контролювати логіку
+
+	public static class Seeder 	static-- об'єкт в 1 екземплярі
+	{
+		public static void Seed(IApplicationBuilder app){
+																	витягує
+			using var scope = app.ApplicationServices.CreateScope(); -- сервіс який має доступ до класів з DI  Program.cs | 
+			using var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();	-- дай 1 з класів і вказуємо і витягне його з DB context
+			
+			context.Database.Migrate()	--	update-database кодом
+		
+	if (!context.Categories.Any())	-- перевіряє чи є категорія
+	
+			var category = new Category Model
+			{
+				Name = "Процесори"
+			};
+			var products = new ProductModel[]
+			{
+				new Product Model { Name = "Процесор 1", Category category }
+				..
+			};
+			context.Categories.Add(category);
+			context.Products.AddRange(products); -- додасть масив
+			context.SaveChanges();
+		
+		
+	//Або відразу передати у category Products, EF сам їх додасть	
+			var category = new Category Model
+			{
+				Name = "Процесори",
+				Products = products
+			};
+			context.Categories.Add(category)	-- створ 2 таблиці 1 запитом
+		
+		}
+		
+		string root = Directory.GetCurrentDirectory();
+		string path = Path.Combine(root, "wwwroot", "seed_data", "components.json");
+		string json = File.ReadAllText(path);
+		..
+	}
+
+
+public IActionResult Index()
+{									//перетворюємо у IEnumerable щоб кинути запит | те саме можна через ToList
+	IEnumerable<ProductModel> products = _context.Products.AsEnumerable()
+				//List<ProductModel> products = _context.Products.ToList()	-- те саме перетворення але можна редагувати
+	
+
+	return View(product);	-- запихаємо у Index наші product
+}
+ --щоб вивести йде у View з такою самою назвою Index
+ 
+ @model IEnumerable<ProductModel>	 --	створ змінну НАЗВА НЕ ЗМІННА model
+									налаштування а змінна Model
+
+
+@ - вставити код у Rect { }
+
+<table class="table">
+	<tbody>
+		@foreach (var product in Model)
+		{
+			<tr>
+				<td>@product.Id</td>
+				<td>@product.Name</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+ℹ️Алгоритм у консрукторі створ dbContext -->
+	--> у ctor його ініціалізуємо --> ередаємо у View(product)
+
+
+//DI у всьому проекті иожна створити dbContext
+	builder. Services.AddDbContext<AppDbContext>(options =>
+	{
+		string connectionString = ""
+		options.UseSqlServer(connectionString);
+	});
+
