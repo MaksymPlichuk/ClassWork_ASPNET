@@ -6292,11 +6292,23 @@ contst LoginPageByGoogle = () => ()	-- зразу return html
 ----------------------------------------------
 01_IntroToASP.NET  
 
+
+
+MVC	-- архітектурний патерн 
+	Entity(Model)	- клас який описує таблицю у БД
+	Controller	- обробляє данні від користувача 
+					робить запит на Entity і відпарвляє на VIEW (HTML сторінка)
+					
+					
+
+
 .NET — це ціла платформа (фундамент), а ASP.NET — це її частина (інструмент) для створення вебсайтів
 
-.NET — це безкоштовна платформа з відкритим вихідним кодом для розробки будь-яких типів програм: від мобільних та десктопних застосунків до ігор та хмарних сервісів.
+.NET — це безкоштовна платформа з відкритим вихідним кодом для розробки будь-яких типів програм
+		від мобільних та десктопних застосунків до ігор та хмарних сервісів.
 
-ASP.NET — це вебфреймворк, побудований поверх .NET. Він додає специфічні бібліотеки та інструменти (наприклад, для роботи з HTTP-запитами, HTML-шаблонами або API), щоб створювати динамічні вебсторінки.
+ASP.NET — це вебфреймворк, побудований поверх .NET. Він додає специфічні бібліотеки та інструменти 
+	(наприклад, для роботи з HTTP-запитами, HTML-шаблонами або API), щоб створювати динамічні вебсторінки.
 
 
 Visual Studio Installer --> ASP.NET
@@ -6316,12 +6328,15 @@ MVC	--	патерн програмного забезпечення,
 
 Do not use top-level statements	--	генерує class Program
 
-                                                             							
+	При запуску студія створює SSl сертифікат для HTTPS
+
+		  
 																						
 ??=	--	якщо значення зліва null то запиши знашення		--	для запису у змінну
 		  string value;
 		  value ??= "Hello World"
-
+	
+!=null	
 ??	--	дивиться чи value null якщо null запише значення	-- для читання
 		 string value = null;
 		 string message = value ?? "Hello world";
@@ -6361,7 +6376,7 @@ IQueryable	--	відтерміновує запит
  s.where();
  s.orderBy();
 
-foreach (var item in s) {}	-- тількт тут виконається запит
+foreach (var item in s) {}	-- тількт тут виконається запит якщо є IQueryable
 
 IEnumerable s = database.Products;	-- тут виконається запит
 
@@ -6377,36 +6392,45 @@ LinkedList	--	колекція на node
 Async	--	все викон в одном потоку поки він працює виконується інший
 
 
-Properties --> commandName": "Project",
+Properties --> launchSettings.json --> commandName": "Project",
 				"dotnetRunMessages":	true,
-				"launchBrowser": false	--	не запускаьт браузер
+				"launchBrowser": false	--	не запускає браузер
 				
 				
-appSettings	--	глобальні налаштування			
+appSettings	--	глобальні налаштування	які можна змінювати схоже на .env		
 				
 				
-	//program cs
+	//program cs	--	не змінюємо
+	
 	
 app.UseHttpsRedirection();	--	відкриває браузер
-app.UseRouting;	
-app.MapStaticAssets();	--	завантажть на www aset з проекту
+app.UseRouting;			-- вбудована маршрутизація
+app.MapStaticAssets();	--	завантажть на сайт asetи з wwwroot
 
 після build wwwroot залишиться так як є коренем для сайту
 		при publish знинкають усі папки крмі цієї (інші перейшли у dll)
 		
 		
-		
+ Models	--	ті самі Entitties
+ Views 	--	HTML
 
-public IActionResult Index()	--	маршрути
+public IActionResult Index()	--	маршрути | сторінка
 {
 	return View();		
 }
 
 
-Controllers -> productConroller
+	@RenderBody	--	Outlet
+	HomeController	--	Шукає у Views по назві папку Home
 
-створюємо папку Product у Views
-	Product -> Index.cshtml
+
+🔷Структура ControllerName/ViewName
+
+Приклад:
+	Controllers -> productConroller
+	
+	створюємо папку Product у Views
+		Product -> Index.cshtml
 	
 	
 	
@@ -6419,33 +6443,35 @@ Controllers -> productConroller
 							
 					
 					
-	 створ папку Data --> AppDbContext.cs	
+	 створ папку 🟧Data --> AppDbContext.cs	
 	
 public class AppDbContext: DbContext
 {
 
 	AppDbContext(DbContextOptions options)
-        : base(options)
+        : base(options)						-- передати у батьківський класс у DbContext
     { 
     }
 
 }
 
 
-//Program.cs прописуємо усі налаштування
+==Program.cs як main прописуємо усі налаштування
 
-builder.Services.AddDbContext<AppDbContext>(options => {
+		//метод від EF
+builder.Services.AddDbContext<AppDbContext> (options => {
 
-	string connectionString = "";	--	ТутВизначиться назва БД
+												//ТутВизначиться назва БД
+	string connectionString = "Server=localHost;Database=myDataBase;Trusted_Connection=True;";
 	options.UseSqlServer(connectionString);
-})
+ })
 	
 	
 
-Data --> Models --> CategoryModel.cs (проперті id,name)
+🟧Data --> Models --> CategoryModel.cs (проперті id,name)
 
 
-AppDbContext.cs ovveride OnModelCreating
+--AppDbContext.cs ovveride OnModelCreating
 
 	protected override void OnModelCreating (ModelBuilder builder)
 {
@@ -6474,7 +6500,7 @@ Terminal	--> add-migration	TestMigration
 	HasColumnType("ntext");	--	вказати тип данних
 
 
-public DateTime CreatedDate {get;set; } DateTime.UtcNow;	
+public DateTime CreatedDate {get;set; } = DateTime.UtcNow;	
 	
 	
 У Product model	
@@ -6482,7 +6508,7 @@ public DateTime CreatedDate {get;set; } DateTime.UtcNow;
 	public int CategoryId { get; set;
 	
 У Category	
-	public List<Product> Products { get; set;
+	public List<ProductModel> Products { get; set;
 	
 builder.Entity<Product Model>()
 	HasOne(p => p. Category)
@@ -6492,6 +6518,6 @@ builder.Entity<Product Model>()
 	
 	
 Lazy loading	--	автоматичне від EF
-Жадібне loading	--
+Жадібне loading	-- все зразу (товари і за ними категорії)
 Явне loading	-- те саме що й lazy тільки ми робимо
 	
