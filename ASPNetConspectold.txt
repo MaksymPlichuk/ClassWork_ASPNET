@@ -6527,40 +6527,17 @@ Lazy loading	--	автоматичне від EF
 	
 	
 Dependecy injection -- 	автоматично виконує update-database
-		+Краще за HasData можна написати логіку яка сама update-database
-						і якщо данних немає то вичитувати з json
-	
-	
-	
-	using -- можна передавати змінні з IDisposable
-				у кінці закриває потік
 	
 	
 //Controllers -> HomeController	(Плануємо виводи товаруи у вкладці Home)
 
-❌ I спосіб це створювати DbContext у контроллері
-
-	private readonly AppDbContext _context;	
-														//передаємо у консрукторі | десь у HomeController має створюватись об'єкт DbContext і передаватись сюди
+❌	private readonly AppDbContext _context;	
+	
  public HomeController(ILogger<HomeController> logger, AppDbContext context)
  {
-	_logger = logger;	--	змінна інтерфейсу для логування
+	_logger = logger;
 	_context = context;	--	ініціалізуємо змінну
  }	
- 
- 
- Dependecy injection	--	залежність класів тобто для HomeController треба створити AppDbContext
-						а воно автоматично створ об'єкти класів
-							!записується у Program.cs
- 
-		Приклад: builder.Services.AddDbContext<AppDbContext> (options => {	-- від нього тепер у любих класах можна створити об'єкт від AppDbContext
-						string connectionString = "";
-						options.UseSqlServer(connectionString);
-					})
- 
- 
- 
- 
  
 	//Метод який викликає Інтерфейс описує HTTP
 public IActionResult Index()
@@ -6716,7 +6693,7 @@ public IActionResult Index()
 									налаштування а змінна Model
 
 
-@ - те саме що вставити код у Rect { }
+@ - вставити код у Rect { }
 
 <table class="table">
 	<tbody>
@@ -6741,116 +6718,4 @@ public IActionResult Index()
 		string connectionString = ""
 		options.UseSqlServer(connectionString);
 	});
-
-
-----------------------------------------------
-03_MVC_Post
-
-
-Виносми connction string у appSttings.json
-
- "ConnectionStrings": {
- 	 "LocalDb": "Server=localhost; Database=PD411_MVC_SHOP; Trusted_Connection=True; TrustServerCertificate=True;'
- }
-
-
- змінюємо у Programs.cs connection string
-																//назва з appSettings
-	var conectionString = builder.Configuration.GetConnectionString("name=LocalDb");
-	
-	
-створення нової сторінки
-
-		public IActionResult Create(){
-			
-			return View()
-		}
-
-
-
-
-перенаправлення з одного HTML у інший
-	<a	asp-controller="Home" ascp-action="AboutUs"	
-
-і створ Create.cshtml
-	
-			
-	<form method="post" asp-action="Create" >
-		
-		<input type="submit">	--	стає кнопкою по правилам має бутии form
-	</form>
-	
-				 //витягує данні по id				
-<input type="text"  id="name" name="name">	
-	
-	
-	
-[HttpPost]	-- вказ на post	
-
- у html  @model ProductModel	--	тип у який конвертнуться дані
-
-						//всі values копіюються у цей об'єкт 
-public async Task<IActionResult> Create(ProductModel model)
-{
-	return View();
-}	
-	
-	
-	
- ViewModel	--	моделі для Views (від користувача)
-			 все від форми
-	
-	
-public IFormFile? Image --	тип данних для файлу
-
-
-< input accept="image/*"	--  який формат приймає
-	
-< form 	
-	enctype="multipart/form-data">	-- передає файл у вишляді об'єкту
-	
-								//анотація для того щоб приймати файл
-public async Task<IActionResult> Create([FromForm]CreateProductVM vm)	
-	
-	
-
-
-string ext = Path.GetExtension(vm.Image.Filename)	--	Достає розширення
-
-string name = Guid.NewGuild().ToString()	--	генерує назву	
-	
-using var imageStream =  vm.Image.OpenReadStream()
-using var fs = new FileStream(filePath, FileMode.ReadOrCreate, FileAccess.Write)	
-	
- imageStream.CopyTo(fileStream);	--	копіює всі байти з одного потоку в інший	
-	
-
-scr="~/images/@product.Image"	--	~ шлях до wwwroot	
-	
-	
-get == delete
-post == put post 	
-
-//delete
-
-	public async Task<1ActionRes Delete(int id)
-{
-	var product = await_context.Products.FirstOrDefaultAsync(p => p. Id == id);
-	if(product != null)
-	{
-	
-	if(product. Image != null) {
-		string root = Directory.GetCurrentDirectory();
-		string imagesPath = Path. Combine(root, "wwwroot", "images");
-		string filePath = Path.Combine(imagesPath, product.Image);
-		
-	 //щоб не було конфліктів	
-		System.IO.File.Delete(filePath);
-	}
-	
-	
-----------------------------------------------
-04_
-
-
 
