@@ -8,6 +8,7 @@ namespace MVC_Shop.Data
         public AppDbContext(DbContextOptions options): base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<CategoryModel>(entity =>
@@ -42,8 +43,10 @@ namespace MVC_Shop.Data
                 .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
-
+            
             base.OnModelCreating(builder);
         }
+        public DbSet<ProductModel> Products { get; set; }
+        public DbSet<CategoryModel> Categories { get; set; }
     }
 }

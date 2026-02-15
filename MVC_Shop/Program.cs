@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
+using MVC_Shop.Data.Initializer;
+using MVC_Shop.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     string connectionString = "Server=DESKTOP-NSGHIVN\\SQLEXPRESS;Database=MVC_SHOP;Trusted_Connection=True;TrustServerCertificate=True;";
     options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddScoped<ProductRepository>();
 
 var app = builder.Build();
 
@@ -34,5 +38,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-
+Seeder.Seed(app);
 app.Run();

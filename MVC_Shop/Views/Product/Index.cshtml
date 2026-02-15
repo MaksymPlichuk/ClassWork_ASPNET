@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ProductModel>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Color</th>
+            <th scope="col">Image</th>
+            <th scope="col">Creation Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+        {
+            <tr class="table-light">
+                <th scope="row">@prod.Id</th>
+                <td>@prod.Name</td>
+                <td>@prod.Description</td>
+                <td>@prod.Price</td>
+                <td>@prod.Color</td>
+                <td> <img height="100" src="@prod.Image" alt="@prod.Name" /></td>
+                <td>@prod.CreatedDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -6530,7 +6530,9 @@ Dependecy injection -- 	автоматично виконує update-database
 		+Краще за HasData можна написати логіку яка сама update-database
 						і якщо данних немає то вичитувати з json
 	
-	
+	//Автоматично створюється об'єкт класу
+	 var dbContext = null;
+	 var home = HomeController(dbContext)
 	
 	using -- можна передавати змінні з IDisposable
 				у кінці закриває потік
@@ -6660,8 +6662,9 @@ Action -- сторінки (HTML)
 
 ✅Цей варіант кращем ти що можна контролювати логіку
 
-	public static class Seeder 	static-- об'єкт в 1 екземплярі
+	public static class Seeder 	static	-- об'єкт в 1 екземплярі
 	{
+								
 		public static void Seed(IApplicationBuilder app){
 																	витягує
 			using var scope = app.ApplicationServices.CreateScope(); -- сервіс який має доступ до класів з DI  Program.cs | 

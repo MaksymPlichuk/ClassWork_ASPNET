@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Shop.Migrations
 {
     /// <inheritdoc />
-    public partial class InitMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CategoryModel",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,11 +21,11 @@ namespace MVC_Shop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryModel", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductModel",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -41,18 +41,18 @@ namespace MVC_Shop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductModel", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductModel_CategoryModel_CategoryId",
+                        name: "FK_Products_Categories_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "CategoryModel",
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductModel_CategoryId",
-                table: "ProductModel",
+                name: "IX_Products_CategoryId",
+                table: "Products",
                 column: "CategoryId");
         }
 
@@ -60,10 +60,10 @@ namespace MVC_Shop.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductModel");
+                name: "Products");
 
             migrationBuilder.DropTable(
-                name: "CategoryModel");
+                name: "Categories");
         }
     }
 }

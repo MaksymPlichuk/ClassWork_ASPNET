@@ -37,7 +37,7 @@ namespace MVC_Shop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CategoryModel");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("MVC_Shop.Models.ProductModel", b =>
@@ -80,7 +80,7 @@ namespace MVC_Shop.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductModel");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("MVC_Shop.Models.ProductModel", b =>

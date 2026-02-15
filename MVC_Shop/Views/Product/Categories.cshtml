@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CategoryModel>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Color</th>
+            <th scope="col">Image</th>
+            <th scope="col">Creation Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr class="table-light">
+                <th scope="row">@category.Id</th>
+                <td>@category.Name</td>
+                <td>@category.Products</td>
+            </tr>
+        }
+    </tbody>
+</table>

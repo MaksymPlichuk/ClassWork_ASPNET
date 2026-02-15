@@ -1,0 +1,1652 @@
+﻿[
+  {
+    "Name": "Процесори",
+    "Products": [
+      {
+        "Name": "AMD Ryzen 7 7800X3D",
+        "Description": "Найкращий ігровий процесор з L3 Cache.",
+        "Price": 16500.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 15,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i9-14900K",
+        "Description": "Флагман 14-го покоління, 24 ядра.",
+        "Price": 24000.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 10,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 9 7950X3D",
+        "Description": "16 ядер для професійного геймінгу.",
+        "Price": 22500.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 8,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i7-14700K",
+        "Description": "Оптимальний вибір для RTX 4080.",
+        "Price": 17800.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 20,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 5 7600X",
+        "Description": "Швидка база для AM5 сокета.",
+        "Price": 9200.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 30,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i5-13600K",
+        "Description": "Найпопулярніший процесор середнього сегмента.",
+        "Price": 13200.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 25,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 7 5800X3D",
+        "Description": "Легенда для AM4 платформ.",
+        "Price": 12000.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 12,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i9-13900K",
+        "Description": "Попередній флагман Intel.",
+        "Price": 21000.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 15,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 5 5600",
+        "Description": "Бюджетний король CS2.",
+        "Price": 5300.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 50,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i5-12400F",
+        "Description": "Народний вибір без відеоядра.",
+        "Price": 5900.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 40,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 9 5900X",
+        "Description": "Для тих, хто стрімить у 4K.",
+        "Price": 14500.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 10,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i7-12700K",
+        "Description": "Потужність 12-го покоління.",
+        "Price": 11000.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 18,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 7 7700",
+        "Description": "Енергоефективний 8-ядерник.",
+        "Price": 13500.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 22,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i3-13100F",
+        "Description": "Бюджетний старт в CS2.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 60,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 5 8600G",
+        "Description": "Процесор з потужною графікою.",
+        "Price": 10200.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 14,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i5-14600KF",
+        "Description": "Висока частота без переплат.",
+        "Price": 13000.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 20,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 7 8700G",
+        "Description": "Найкраща вбудована графіка 2026.",
+        "Price": 14800.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 10,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i9-14900KS",
+        "Description": "Лімітована версія для рекордів.",
+        "Price": 27000.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 5,
+        "Color": "Blue"
+      },
+      {
+        "Name": "AMD Ryzen 5 7500F",
+        "Description": "Топ за свої гроші на AM5.",
+        "Price": 7500.0,
+        "Image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500",
+        "Amount": 35,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Intel Core i5-13400",
+        "Description": "Тихий та холодний для ігор.",
+        "Price": 9500.0,
+        "Image": "https://images.unsplash.com/photo-1555617766-c94804975da3?w=500",
+        "Amount": 28,
+        "Color": "Blue"
+      }
+    ]
+  },
+  {
+    "Name": "Відеокарти",
+    "Products": [
+      {
+        "Name": "NVIDIA GeForce RTX 4090",
+        "Description": "24GB VRAM. Максимум FPS.",
+        "Price": 82000.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 5,
+        "Color": "Black"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 4080 Super",
+        "Description": "Ідеал для 4K геймінгу.",
+        "Price": 48000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 10,
+        "Color": "Silver"
+      },
+      {
+        "Name": "AMD Radeon RX 7900 XTX",
+        "Description": "Флагман від AMD, 24GB.",
+        "Price": 44000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 4070 Ti Super",
+        "Description": "Баланс ціни та потужності.",
+        "Price": 36000.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 15,
+        "Color": "White"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 4060 Ti",
+        "Description": "Найкраща для Full HD 240Hz.",
+        "Price": 18500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "AMD Radeon RX 7800 XT",
+        "Description": "Топ за свою ціну для 1440p.",
+        "Price": 22000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 20,
+        "Color": "Red"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 3060",
+        "Description": "Народна карта 12GB.",
+        "Price": 12500.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 45,
+        "Color": "Black"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 4070 Super",
+        "Description": "Оновлена версія 12GB.",
+        "Price": 28500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 25,
+        "Color": "Grey"
+      },
+      {
+        "Name": "AMD Radeon RX 7600",
+        "Description": "Бюджетна карта для кіберспорту.",
+        "Price": 11500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 35,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASUS ROG Strix RTX 4090",
+        "Description": "Найкраще охолодження на ринку.",
+        "Price": 95000.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 3,
+        "Color": "RGB"
+      },
+      {
+        "Name": "MSI Gaming X Slim RTX 4080",
+        "Description": "Тонка та холодна.",
+        "Price": 51000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 8,
+        "Color": "Black"
+      },
+      {
+        "Name": "Gigabyte Windforce RTX 4070",
+        "Description": "Стабільність та надійність.",
+        "Price": 26000.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "Sapphire Pulse RX 7900 GRE",
+        "Description": "Золота середина від AMD.",
+        "Price": 25500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 10,
+        "Color": "Red"
+      },
+      {
+        "Name": "Palit Dual RTX 4060",
+        "Description": "Компактна карта для ITX збірок.",
+        "Price": 12800.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Zotac Trinity RTX 4070 Ti",
+        "Description": "Унікальний дизайн.",
+        "Price": 34000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 9,
+        "Color": "Grey"
+      },
+      {
+        "Name": "AMD Radeon RX 6700 XT",
+        "Description": "Легендарна карта середнього класу.",
+        "Price": 14500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 3050",
+        "Description": "Для початкового рівня.",
+        "Price": 9500.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 50,
+        "Color": "Black"
+      },
+      {
+        "Name": "Inno3D X3 RTX 4090",
+        "Description": "Строгий дизайн, три вентилятори.",
+        "Price": 81000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 4,
+        "Color": "Silver"
+      },
+      {
+        "Name": "PowerColor Hellhound RX 7800 XT",
+        "Description": "Яскрава підсвітка, тиха робота.",
+        "Price": 23500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 15,
+        "Color": "Blue"
+      },
+      {
+        "Name": "EVGA FTW3 RTX 3090 Ti",
+        "Description": "Колекційна модель.",
+        "Price": 45000.0,
+        "Image": "https://images.unsplash.com/photo-1671542471960-e46c7643e695?w=500",
+        "Amount": 2,
+        "Color": "RGB"
+      }
+    ]
+  },
+  {
+    "Name": "Мишки (Pro CS2 Setup)",
+    "Products": [
+      {
+        "Name": "Logitech G Pro X Superlight 2",
+        "Description": "Вибір s1mple та m0NESY. 60 грамів.",
+        "Price": 6500.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 50,
+        "Color": "White"
+      },
+      {
+        "Name": "Razer DeathAdder V3 Pro",
+        "Description": "Вибір ZywOo. Ергономічна форма.",
+        "Price": 5900.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "Zowie EC2-CW",
+        "Description": "Вибір donk. Класика без дротів.",
+        "Price": 5800.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 25,
+        "Color": "Matte Black"
+      },
+      {
+        "Name": "Vaxee XE Wireless",
+        "Description": "Топ сенсор, вибір NiKo.",
+        "Price": 6100.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 15,
+        "Color": "Blue"
+      },
+      {
+        "Name": "Finalmouse UltralightX",
+        "Description": "Найлегша мишка в світі (35г).",
+        "Price": 9800.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 5,
+        "Color": "Gold"
+      },
+      {
+        "Name": "SteelSeries Prime Wireless",
+        "Description": "Вибір karrigan. Оптичні перемикачі.",
+        "Price": 3800.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Razer Viper V3 Pro",
+        "Description": "Новинка з підтримкою 8000Hz.",
+        "Price": 6200.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 18,
+        "Color": "White"
+      },
+      {
+        "Name": "Zowie FK2-C",
+        "Description": "Дротова класика для стабільності.",
+        "Price": 2800.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Lamzu Maya",
+        "Description": "Ультралегка симетрична мишка.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 12,
+        "Color": "Red"
+      },
+      {
+        "Name": "Pulsar X2V2",
+        "Description": "Сенсор PixArt 3395.",
+        "Price": 3900.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 22,
+        "Color": "White"
+      },
+      {
+        "Name": "Endgame Gear OP1 8k",
+        "Description": "Найшвидший відгук (дротова).",
+        "Price": 3200.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "G-Wolves HTS Plus 4K",
+        "Description": "Маленька мишка для claw grip.",
+        "Price": 5500.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 8,
+        "Color": "Grey"
+      },
+      {
+        "Name": "Ninjutso Sora V2",
+        "Description": "Вага 39г без дірок.",
+        "Price": 4900.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 14,
+        "Color": "White"
+      },
+      {
+        "Name": "Logitech G305",
+        "Description": "Народна бездротова мишка.",
+        "Price": 1800.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 100,
+        "Color": "Black"
+      },
+      {
+        "Name": "Glorious Model O 2",
+        "Description": "Стільникова структура, дуже легка.",
+        "Price": 3500.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 30,
+        "Color": "White"
+      },
+      {
+        "Name": "Xtrfy M4 Wireless",
+        "Description": "Ергономічна форма, змінний корпус.",
+        "Price": 3200.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Razer Basilisk V3 Custom",
+        "Description": "Багато кнопок для макросів.",
+        "Price": 2900.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "HyperX Pulsefire Haste 2",
+        "Description": "Гнучкий кабель, легкий корпус.",
+        "Price": 2400.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 40,
+        "Color": "White"
+      },
+      {
+        "Name": "BenQ Zowie S2-C",
+        "Description": "Для тих, хто любить коротку форму.",
+        "Price": 2700.0,
+        "Image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair Sabre RGB Pro",
+        "Description": "8000Hz опитування.",
+        "Price": 2200.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      }
+    ]
+  },
+  {
+    "Name": "Клавіатури",
+    "Products": [
+      {
+        "Name": "Wooting 60HE",
+        "Description": "Rapid Trigger, вибір більшості про.",
+        "Price": 8800.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "SteelSeries Apex Pro TKL",
+        "Description": "OmniPoint 2.0 перемикачі.",
+        "Price": 7500.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Razer Huntsman V3 Pro TKL",
+        "Description": "Оптичні аналогові світчі.",
+        "Price": 7200.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Logitech G Pro X TKL",
+        "Description": "Бездротова, вибір NAVI.",
+        "Price": 6800.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 25,
+        "Color": "White"
+      },
+      {
+        "Name": "Ducky One 3 Mini",
+        "Description": "60% формат, чудовий звук.",
+        "Price": 4500.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 12,
+        "Color": "Yellow"
+      },
+      {
+        "Name": "Custom KB: Tofu65",
+        "Description": "Кастомна клавіатура для ентузіастів.",
+        "Price": 12000.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 5,
+        "Color": "Grey"
+      },
+      {
+        "Name": "HyperX Alloy Origins Core",
+        "Description": "Надійний метал, RGB.",
+        "Price": 3600.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Keychron Q1 Pro",
+        "Description": "Механіка з алюмінієвим корпусом.",
+        "Price": 7900.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 8,
+        "Color": "Blue"
+      },
+      {
+        "Name": "Varmilo VA87M",
+        "Description": "Найкращі кейкапи на ринку.",
+        "Price": 5800.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 10,
+        "Color": "Sakura"
+      },
+      {
+        "Name": "Corsair K70 RGB TKL",
+        "Description": "8000Hz та якість Corsair.",
+        "Price": 4900.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "Glorious GMMK Pro",
+        "Description": "Модульна клавіатура з крутилкою.",
+        "Price": 6500.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "Akko 3068B Plus",
+        "Description": "Стильна та недорога механіка.",
+        "Price": 3200.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 30,
+        "Color": "Blue"
+      },
+      {
+        "Name": "ASUS ROG Azoth",
+        "Description": "75% з OLED екраном.",
+        "Price": 9500.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 7,
+        "Color": "Black"
+      },
+      {
+        "Name": "Anne Pro 2",
+        "Description": "Класика 60% сегмента.",
+        "Price": 2900.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 35,
+        "Color": "White"
+      },
+      {
+        "Name": "HHKB Professional Hybrid",
+        "Description": "Топові перемикачі Topre.",
+        "Price": 14000.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 3,
+        "Color": "Grey"
+      },
+      {
+        "Name": "RK61 Mechanical",
+        "Description": "Бюджетна механіка для новачків.",
+        "Price": 1600.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 60,
+        "Color": "Black"
+      },
+      {
+        "Name": "Drift GHOST 65",
+        "Description": "Вибір професіоналів з Китаю.",
+        "Price": 6200.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 10,
+        "Color": "White"
+      },
+      {
+        "Name": "SteelSeries Apex 9 Mini",
+        "Description": "Оптичні світчі, дуже швидка.",
+        "Price": 4800.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Xtrfy K4 TKL",
+        "Description": "Міцна конструкція, RGB.",
+        "Price": 3100.0,
+        "Image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Razer BlackWidow V4 75%",
+        "Description": "Hot-swap від Razer.",
+        "Price": 7800.0,
+        "Image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      }
+    ]
+  },
+  {
+    "Name": "Оперативна пам'ять",
+    "Products": [
+      {
+        "Name": "G.Skill Trident Z5 RGB 32GB DDR5",
+        "Description": "6400MHz CL32. Топ для Intel.",
+        "Price": 5500.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair Vengeance RGB 32GB DDR5",
+        "Description": "Надійна пам'ять з підсвіткою.",
+        "Price": 5200.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 45,
+        "Color": "Black"
+      },
+      {
+        "Name": "Kingston FURY Renegade 32GB DDR5",
+        "Description": "Низькі таймінги для AMD.",
+        "Price": 5800.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 30,
+        "Color": "Silver"
+      },
+      {
+        "Name": "TeamGroup T-Force Delta RGB 32GB",
+        "Description": "Висока частота 7200MHz.",
+        "Price": 6200.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 20,
+        "Color": "White"
+      },
+      {
+        "Name": "Crucial Pro 32GB DDR5",
+        "Description": "Строгий дизайн без RGB.",
+        "Price": 4600.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 50,
+        "Color": "Black"
+      },
+      {
+        "Name": "G.Skill Ripjaws S5 32GB",
+        "Description": "Низький профіль під кулери.",
+        "Price": 4900.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 35,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair Dominator Titanium 64GB",
+        "Description": "Ексклюзивна серія.",
+        "Price": 12000.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 10,
+        "Color": "Grey"
+      },
+      {
+        "Name": "Kingston FURY Beast 16GB DDR4",
+        "Description": "Класика для бюджетних збірок.",
+        "Price": 1800.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 100,
+        "Color": "Black"
+      },
+      {
+        "Name": "G.Skill Flare X5 32GB",
+        "Description": "AMD EXPO оптимізація.",
+        "Price": 5100.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "ADATA XPG Lancer 32GB DDR5",
+        "Description": "Стильний дизайн.",
+        "Price": 4800.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "Patriot Viper Venom 32GB DDR5",
+        "Description": "Висока продуктивність.",
+        "Price": 5000.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Lexar Thor RGB 32GB",
+        "Description": "Новинка на ринку.",
+        "Price": 4700.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 15,
+        "Color": "White"
+      },
+      {
+        "Name": "Mushkin Redline ST 32GB",
+        "Description": "Для професійних оверклокерів.",
+        "Price": 5900.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 5,
+        "Color": "Red"
+      },
+      {
+        "Name": "Silicon Power Zenith 32GB",
+        "Description": "Найдешевша DDR5.",
+        "Price": 4100.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 60,
+        "Color": "Grey"
+      },
+      {
+        "Name": "Thermaltake TOUGHRAM RGB 32GB",
+        "Description": "Синхронізація з екосистемою TT.",
+        "Price": 5400.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "Pny XLR8 Gaming 32GB",
+        "Description": "Міцні радіатори.",
+        "Price": 4950.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      },
+      {
+        "Name": "GeIL Polaris RGB 32GB",
+        "Description": "Перша DDR5 від легендарного бренду.",
+        "Price": 5050.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "Netac Shadow RGB 32GB",
+        "Description": "Яскраве RGB.",
+        "Price": 4600.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "Klevv Cras XR5 32GB",
+        "Description": "Корейська якість.",
+        "Price": 5300.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 10,
+        "Color": "White"
+      },
+      {
+        "Name": "Apacer NOX RGB 32GB DDR5",
+        "Description": "Стабільність понад усе.",
+        "Price": 4750.0,
+        "Image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      }
+    ]
+  },
+  {
+    "Name": "SSD Накопичувачі",
+    "Products": [
+      {
+        "Name": "Samsung 990 Pro 2TB",
+        "Description": "Найшвидший PCIe 4.0 SSD.",
+        "Price": 7800.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "WD Black SN850X 2TB",
+        "Description": "Вибір геймерів для швидкої завантаження.",
+        "Price": 6900.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "Crucial T700 1TB PCIe 5.0",
+        "Description": "Нове покоління, швидкість 12000MB/s.",
+        "Price": 8500.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 10,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Kingston KC3000 1TB",
+        "Description": "Найкраща ціна за ГБ.",
+        "Price": 3900.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 50,
+        "Color": "Black"
+      },
+      {
+        "Name": "Samsung 970 EVO Plus 1TB",
+        "Description": "Легендарна надійність.",
+        "Price": 3200.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 60,
+        "Color": "Black"
+      },
+      {
+        "Name": "Lexar NM790 2TB",
+        "Description": "Дуже холодний та швидкий.",
+        "Price": 5500.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "SK Hynix Platinum P41 2TB",
+        "Description": "Корейський топ.",
+        "Price": 7200.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Sabrent Rocket 4 Plus 4TB",
+        "Description": "Максимальний об'єм.",
+        "Price": 16000.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 5,
+        "Color": "Copper"
+      },
+      {
+        "Name": "ADATA XPG S70 Blade 1TB",
+        "Description": "З радіатором для PS5.",
+        "Price": 3600.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 35,
+        "Color": "Grey"
+      },
+      {
+        "Name": "Crucial P5 Plus 1TB",
+        "Description": "Стабільна робота.",
+        "Price": 3400.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "TeamGroup MP44 2TB",
+        "Description": "Витривалий SSD.",
+        "Price": 5200.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair MP600 Pro NH 2TB",
+        "Description": "Без радіатора для ноутбуків.",
+        "Price": 6800.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "PNY CS3140 1TB",
+        "Description": "Висока швидкість запису.",
+        "Price": 3850.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      },
+      {
+        "Name": "Seagate FireCuda 530 1TB",
+        "Description": "Преміум якість.",
+        "Price": 4500.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Netac NV7000 2TB",
+        "Description": "Китайський флагман.",
+        "Price": 4800.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "MSI Spatium M480 2TB",
+        "Description": "Дизайн від MSI.",
+        "Price": 6400.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 8,
+        "Color": "Bronze"
+      },
+      {
+        "Name": "Gigabyte Aorus Gen4 1TB",
+        "Description": "Масивний мідний радіатор.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 14,
+        "Color": "Copper"
+      },
+      {
+        "Name": "Kingston NV2 2TB",
+        "Description": "Найдешевший 2TB SSD.",
+        "Price": 3950.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 70,
+        "Color": "Blue"
+      },
+      {
+        "Name": "Silicon Power XS70 2TB",
+        "Description": "Швидкість 7300MB/s.",
+        "Price": 5300.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 20,
+        "Color": "Grey"
+      },
+      {
+        "Name": "Patriot Viper VP4300 1TB",
+        "Description": "Два радіатори в комплекті.",
+        "Price": 4100.0,
+        "Image": "https://images.unsplash.com/photo-1597872200370-493dea239322?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      }
+    ]
+  },
+  {
+    "Name": "Материнські плати",
+    "Products": [
+      {
+        "Name": "ASUS ROG CROSSHAIR X670E HERO",
+        "Description": "Топова плата для Ryzen 7000.",
+        "Price": 24000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 5,
+        "Color": "Black"
+      },
+      {
+        "Name": "MSI MAG B650 TOMAHAWK WIFI",
+        "Description": "Найкращий вибір за ціна/якість.",
+        "Price": 8500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Gigabyte Z790 AORUS ELITE AX",
+        "Description": "Для потужних Intel i9.",
+        "Price": 11500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 15,
+        "Color": "Grey"
+      },
+      {
+        "Name": "ASUS TUF GAMING B760-PLUS WIFI",
+        "Description": "Надійна плата середнього рівня.",
+        "Price": 7200.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASRock X670E Taichi",
+        "Description": "Унікальний дизайн з шестернями.",
+        "Price": 18500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 8,
+        "Color": "Gold/Black"
+      },
+      {
+        "Name": "MSI MPG Z790 CARBON WIFI",
+        "Description": "Стильна плата з RGB.",
+        "Price": 16000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Gigabyte B650I AORUS ULTRA",
+        "Description": "Найкраща ITX плата.",
+        "Price": 10500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASUS PRIME B550M-A",
+        "Description": "Бюджетний варіант для AM4.",
+        "Price": 3800.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 40,
+        "Color": "White/Silver"
+      },
+      {
+        "Name": "ASRock B650M-HDV/M.2",
+        "Description": "Ультрабюджетна AM5.",
+        "Price": 5100.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "NZXT N7 B650E",
+        "Description": "Мінімалістичний дизайн.",
+        "Price": 13000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 6,
+        "Color": "White"
+      },
+      {
+        "Name": "Biostar Racing Z790GTA",
+        "Description": "Для любителів класики.",
+        "Price": 8900.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "EVGA Z790 DARK K|NGP|N",
+        "Description": "Для екстремального розгону.",
+        "Price": 28000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 2,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASUS ROG STRIX B650-A GAMING",
+        "Description": "Біла материнська плата.",
+        "Price": 9800.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 18,
+        "Color": "White"
+      },
+      {
+        "Name": "Gigabyte X670 AORUS ELITE",
+        "Description": "Стабільна робота фаз живлення.",
+        "Price": 12500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 10,
+        "Color": "Grey"
+      },
+      {
+        "Name": "MSI PRO Z790-P WIFI",
+        "Description": "Для робочих станцій.",
+        "Price": 9200.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASRock Z790 Steel Legend",
+        "Description": "Надійна та красива.",
+        "Price": 10800.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 15,
+        "Color": "Silver"
+      },
+      {
+        "Name": "ASUS ROG MAXIMUS Z790 APEX",
+        "Description": "Найкраща для розгону пам'яті.",
+        "Price": 26000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 4,
+        "Color": "White"
+      },
+      {
+        "Name": "Gigabyte B760M DS3H",
+        "Description": "Народна плата під i5-12400.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 50,
+        "Color": "Black"
+      },
+      {
+        "Name": "MSI B450 TOMAHAWK MAX II",
+        "Description": "Остання надія AM4.",
+        "Price": 3500.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Colorful iGame Z790 Flow",
+        "Description": "Екзотичний дизайн.",
+        "Price": 11000.0,
+        "Image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
+        "Amount": 6,
+        "Color": "White"
+      }
+    ]
+  },
+  {
+    "Name": "Блоки живлення",
+    "Products": [
+      {
+        "Name": "Corsair RM850x 850W",
+        "Description": "Золотий стандарт надійності.",
+        "Price": 6200.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "Seasonic Prime TX-1000",
+        "Description": "Titanium ефективність.",
+        "Price": 14000.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "EVGA SuperNOVA 750 G6",
+        "Description": "Компактний та потужний.",
+        "Price": 5500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Be Quiet! Dark Power 13 1000W",
+        "Description": "Найтихіший БЖ на ринку.",
+        "Price": 11500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Asus ROG Thor 1200W",
+        "Description": "Блок з OLED дисплеєм.",
+        "Price": 16500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 8,
+        "Color": "RGB"
+      },
+      {
+        "Name": "MSI MPG A850G PCIE5",
+        "Description": "З рідним кабелем 12VHPWR.",
+        "Price": 6800.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "Cooler Master V850 Gold V2",
+        "Description": "Перевірена часом модель.",
+        "Price": 5900.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 18,
+        "Color": "White"
+      },
+      {
+        "Name": "DeepCool DQ850-M-V2L",
+        "Description": "Бюджетний Gold блок.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Thermaltake Toughpower GF3 1200W",
+        "Description": "Для RTX 4090 систем.",
+        "Price": 9500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "Gigabyte UD850GM",
+        "Description": "Компактний дизайн.",
+        "Price": 4500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "NZXT C850 Gold",
+        "Description": "Тиха робота вентилятора.",
+        "Price": 5200.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "Fractal Design Ion+ 2 Platinum",
+        "Description": "Дуже гнучкі кабелі.",
+        "Price": 7500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "SilverStone SX750 Platinum",
+        "Description": "Найкращий SFX блок.",
+        "Price": 6900.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "FSP Hydro G Pro 850W",
+        "Description": "Для екстремальних умов.",
+        "Price": 5100.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "Lian Li SP850",
+        "Description": "SFX-L для потужних компактів.",
+        "Price": 6200.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 9,
+        "Color": "White"
+      },
+      {
+        "Name": "Super Flower Leadex III 750W",
+        "Description": "Оригінальна схемотехніка.",
+        "Price": 4800.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Phanteks Revolt Pro 1000W",
+        "Description": "Можливість об'єднання двох БЖ.",
+        "Price": 8900.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 6,
+        "Color": "Black"
+      },
+      {
+        "Name": "Chieftec Polaris 750W",
+        "Description": "Бюджетний та надійний Gold.",
+        "Price": 3800.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 50,
+        "Color": "Black"
+      },
+      {
+        "Name": "Aerocool LUX RGB 750W",
+        "Description": "Для тих, хто любить підсвітку.",
+        "Price": 2200.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 40,
+        "Color": "RGB"
+      },
+      {
+        "Name": "Antec Signature 1000W",
+        "Description": "Преміальний блок від Antec.",
+        "Price": 12500.0,
+        "Image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "Amount": 4,
+        "Color": "Silver"
+      }
+    ]
+  },
+  {
+    "Name": "Охолодження",
+    "Products": [
+      {
+        "Name": "Lian Li Galahad II LCD 360",
+        "Description": "Рідке охолодження з великим екраном.",
+        "Price": 11500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Noctua NH-D15 chromax.black",
+        "Description": "Найкращий повітряний кулер.",
+        "Price": 5200.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "NZXT Kraken Elite 360",
+        "Description": "Преміум СРО з кастомним екраном.",
+        "Price": 13000.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 8,
+        "Color": "White"
+      },
+      {
+        "Name": "Arctic Liquid Freezer III 360",
+        "Description": "Найкраща ефективність за свою ціну.",
+        "Price": 5500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "Be Quiet! Dark Rock Pro 5",
+        "Description": "Найтихіше повітряне охолодження.",
+        "Price": 4200.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "DeepCool AK620 Digital",
+        "Description": "Кулер з дисплеєм температури.",
+        "Price": 3200.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 40,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair iCUE Link H150i",
+        "Description": "Інноваційна система з'єднання кабелів.",
+        "Price": 9800.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "Thermalright Peerless Assassin 120",
+        "Description": "Вбивця флагманів за копійки.",
+        "Price": 1900.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 100,
+        "Color": "Grey"
+      },
+      {
+        "Name": "MSI MAG CoreLiquid E360",
+        "Description": "Стильне СРО від MSI.",
+        "Price": 6500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 15,
+        "Color": "White"
+      },
+      {
+        "Name": "ASUS ROG Ryujin III 360",
+        "Description": "СРО з вентилятором для VRM.",
+        "Price": 15500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 5,
+        "Color": "Black"
+      },
+      {
+        "Name": "Cooler Master MasterLiquid ML360",
+        "Description": "Яскраве RGB.",
+        "Price": 4800.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "Noctua NH-U12A chromax.black",
+        "Description": "Компактний але дуже потужний.",
+        "Price": 4900.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      },
+      {
+        "Name": "ID-COOLING IS-67-XT",
+        "Description": "Для низькопрофільних збірок.",
+        "Price": 1600.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 35,
+        "Color": "Black"
+      },
+      {
+        "Name": "EKWB EK-Nucleus AIO CR360",
+        "Description": "Якість від майстрів кастом СРО.",
+        "Price": 8200.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Phanteks Glacier One 360MPH",
+        "Description": "Білосніжне охолодження.",
+        "Price": 7500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 7,
+        "Color": "White"
+      },
+      {
+        "Name": "Scythe Fuma 3",
+        "Description": "Японська інженерія.",
+        "Price": 2800.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 15,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Valkyrie GL360",
+        "Description": "Новинка з LCD та крутими фанами.",
+        "Price": 9200.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 5,
+        "Color": "Purple"
+      },
+      {
+        "Name": "Endorfy Navis F360",
+        "Description": "Польська якість, дуже тиха.",
+        "Price": 4600.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "SilverStone IceMyst 360",
+        "Description": "Модульне СРО з доп-фанами.",
+        "Price": 6900.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 6,
+        "Color": "Black"
+      },
+      {
+        "Name": "Graid Victus 360",
+        "Description": "Бюджетне рішення з RGB.",
+        "Price": 3500.0,
+        "Image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      }
+    ]
+  },
+  {
+    "Name": "Монітори",
+    "Products": [
+      {
+        "Name": "Zowie XL2566K",
+        "Description": "360Hz DyAc+. Вибір №1 для CS2.",
+        "Price": 26500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASUS ROG Swift PG248QP",
+        "Description": "Перший у світі 540Hz монітор.",
+        "Price": 38000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 5,
+        "Color": "Black"
+      },
+      {
+        "Name": "Alienware AW2524HF",
+        "Description": "500Hz швидкість для про-сцени.",
+        "Price": 32000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 8,
+        "Color": "Dark Grey"
+      },
+      {
+        "Name": "Zowie XL2546K",
+        "Description": "240Hz DyAc+. Класика турнірів.",
+        "Price": 19500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 30,
+        "Color": "Black"
+      },
+      {
+        "Name": "LG UltraGear 27GR95QE",
+        "Description": "240Hz OLED. Неймовірна картинка.",
+        "Price": 35000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 12,
+        "Color": "Black"
+      },
+      {
+        "Name": "ASUS TUF Gaming VG259QM",
+        "Description": "280Hz IPS за доступною ціною.",
+        "Price": 12500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 25,
+        "Color": "Black"
+      },
+      {
+        "Name": "Samsung Odyssey G7",
+        "Description": "Вигнутий 240Hz монітор.",
+        "Price": 22000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      },
+      {
+        "Name": "BenQ EX270QM",
+        "Description": "1440p 240Hz для CS2 та RPG.",
+        "Price": 28000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 10,
+        "Color": "Grey"
+      },
+      {
+        "Name": "ViewSonic Elite XG2431",
+        "Description": "Сертифікований Blur Busters.",
+        "Price": 14500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 15,
+        "Color": "Black"
+      },
+      {
+        "Name": "MSI G253PF",
+        "Description": "380Hz швидка матриця.",
+        "Price": 16800.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "AOC 24G2ZU",
+        "Description": "240Hz бюджетний хіт.",
+        "Price": 9500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 40,
+        "Color": "Red/Black"
+      },
+      {
+        "Name": "HP Omen 25i",
+        "Description": "Чудова кольоропередача.",
+        "Price": 8800.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 22,
+        "Color": "Black"
+      },
+      {
+        "Name": "Gigabyte M27Q-X",
+        "Description": "240Hz 1440p IPS.",
+        "Price": 17500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 14,
+        "Color": "Black"
+      },
+      {
+        "Name": "Dell G2524H",
+        "Description": "280Hz надійний монітор.",
+        "Price": 11000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 20,
+        "Color": "Black"
+      },
+      {
+        "Name": "Acer Predator X25",
+        "Description": "360Hz з NVIDIA Reflex.",
+        "Price": 21000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 10,
+        "Color": "Black"
+      },
+      {
+        "Name": "Corsair Xeneon Flex",
+        "Description": "Монітор, що згинається вручну.",
+        "Price": 65000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 3,
+        "Color": "Black"
+      },
+      {
+        "Name": "Sony InZone M3",
+        "Description": "240Hz від Sony.",
+        "Price": 18500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 7,
+        "Color": "White"
+      },
+      {
+        "Name": "Lenovo Legion Y25-30",
+        "Description": "280Hz для кіберспорту.",
+        "Price": 10500.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 18,
+        "Color": "Black"
+      },
+      {
+        "Name": "Philips Evnia 25M2N3200W",
+        "Description": "240Hz доступний монітор.",
+        "Price": 8900.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 25,
+        "Color": "Silver"
+      },
+      {
+        "Name": "Samsung Odyssey Neo G8",
+        "Description": "4K 240Hz. Нереально.",
+        "Price": 42000.0,
+        "Image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+        "Amount": 4,
+        "Color": "White"
+      }
+    ]
+  }
+]
