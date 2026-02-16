@@ -6750,7 +6750,7 @@ public IActionResult Index()
 03_MVC_Post
 
 
-Виносми connction string у appSttings.json
+Виносми connction string у appSttings.json | у майбутьному через keyStorage
 
  "ConnectionStrings": {
  	 "LocalDb": "Server=localhost; Database=PD411_MVC_SHOP; Trusted_Connection=True; TrustServerCertificate=True;'
@@ -6770,10 +6770,11 @@ public IActionResult Index()
 		}
 
 
+Щоб імпортувати іконки заходимо у Shared->Layout.cshtml і вставляємо link
 
 
 перенаправлення з одного HTML у інший
-	<a	asp-controller="Home" ascp-action="AboutUs"	
+	<a	asp-controller="Home" asp-action="AboutUs"	
 
 і створ Create.cshtml
 	
@@ -6787,8 +6788,10 @@ public IActionResult Index()
 <input type="text"  id="name" name="name">	
 	
 	
+	☑️треба вимкнути Інтелектуальне керування програмами
 	
-[HttpPost]	-- вказ на post	
+	
+[HttpPost]	-- вказ на post		| сторюємо такий самий метод але з цією анотацією
 
  у html  @model ProductModel	--	тип у який конвертнуться дані
 

@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    string connectionString = "Server=DESKTOP-NSGHIVN\\SQLEXPRESS;Database=MVC_SHOP;Trusted_Connection=True;TrustServerCertificate=True;";
+    string? connectionString = builder.Configuration.GetConnectionString("LocalDB");
     options.UseSqlServer(connectionString);
 });
 
