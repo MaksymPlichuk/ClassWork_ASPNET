@@ -6856,7 +6856,103 @@ post == put post
 	
 	
 ----------------------------------------------
-04_
+04_Validation
+
+
+ Валідація у userVM через Data Annotations
+ 
+ [Required(ErrorMessage="ErrorMsg")]
+ 
+ 
+public class CreateProductVM
+ {
+	[Required(ErrorMessage = "0бов'язкове поле")]
+	[MaxLength (200, ErrorMessage = "Максимальна довжина 200 символів")]
+	public string? Name { get; set; }
+	
+	public string? Description { get; set; } 
+ }
+ 
+
+//логіка перевірки
+
+public async Task<IActionResult> Create([FromForm]CreateProductVM vm)
+{
+	 ModelState	--	Словник із всіма помилками і проперті
+	
+	if(!ModelState.IsValid)
+	{
+		return View(vm);	-- vm передається щоб вивести у формі данні після submit
+	}
+
+
+		//щоб форма заповнилась тими данними які прийшли
+< input asp-for="Name" >	зчитує з @model CreateProductVM
+
+
+	[Range (1, 99999999)]
+public double Price { get; set; } Od;	--	d вказує що double
+
+
+asp-validation	--	автоматична валідація тобто містить помилки з властивості яка її отримала
+
+	//тескт при валідації
+<span asp-validation-for="Name"></span>
+
+
+[ValidateAntiForgeryToken]	--	від crsf атак (створ унікальний токен при відправці)
+ 
+ 
+//Select
+
+ ProductModelVM
+
+	public int CategoryId { get; set; }
+	public IEnumerable<SelectListItem> SelectCategories { get; set; }
+
+ SelectListItem містить Value і Text(виводиться для користувача) 
+
+Модифікуємо View
+	
+	public async Task<IActionResult> Create()
+{
+	List<CategoryModel> categories = await context.Categories. ToListAsync();
+	
+	IEnumerable<SelectListItem> selectItems = categorise
+	
+								//створ ім'я   перетвор id
+		.Select(c => new SelectListItem(c.Name, c.Id.ToString()))
+}
+
+
+							//колекція SelectListItem яка автоматично виводить select
+<select asp-for="CategoryId" asp-items="@Model!.SelectCategories"><
+/select>
+
+
+.AsNoTracking()	--	не слідкує за данними і можна обновити об'єкт  без помилки
+						при новій категорії
+
+Tracking дії над БД у коді до Save
+
+context.Update()	--	створ 2 версії одного об'єкта
+
+
+
+ якщо витягнути Categories перед Products окремим запитом
+	то КАТЕГОРІЇ у Product не будуть null
+
+
+--Краще один великий запит чим пару малих
+
+
+ProductModel product products. First();
+context.Entry(products).State = EntityState. -- Втрутитись у Tracking повністю його контролювати
+
+_contex.Update() 
+	//те саме
+_context.Entry(products).State = EntityState.Modified
+
 
 
 

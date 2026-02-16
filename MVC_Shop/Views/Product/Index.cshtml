@@ -26,8 +26,13 @@
                 <td>@prod.Description</td>
                 <td>@prod.Price</td>
                 <td>@prod.Color</td>
-                <td> <img height="100" src="@prod.Image" alt="@prod.Name" /></td>
+                <td> <img height="100" src="~/images/@prod.Image" alt="@prod.Name" /></td>
                 <td>@prod.CreatedDate</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@prod.Id">
+                        <i class="bi bi-trash3"></i>
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

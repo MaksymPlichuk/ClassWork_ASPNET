@@ -69,5 +69,19 @@ namespace MVC_Shop.Controllers
 
             return RedirectToAction("Index"); 
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var prod = await _context.Products.FindAsync(id);
+
+            if (prod != null) {
+
+                string root = Directory.GetCurrentDirectory();
+                string path = Path.Combine(root, "wwwroot", "images", $"{prod.Name}");
+                Console.WriteLine($"\t\t\t{path}");
+            }
+            
+            return RedirectToAction("Index");
+        }
     }
 }
