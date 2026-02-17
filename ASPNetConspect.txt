@@ -6834,8 +6834,16 @@ using var fs = new FileStream(filePath, FileMode.ReadOrCreate, FileAccess.Write)
 scr="~/images/@product.Image"	--	~ шлях до wwwroot	
 	
 	
-get == delete
-post == put post 	
+	у form лише get і post
+	
+get == get delete
+post == put post patch	
+
+
+	asp-route-	--	передавати параметр по URL
+
+<a asp-action="delete" asp-route-id	>  // -id це назва яку ми будем витягувати у View
+
 
 //delete
 
@@ -6850,7 +6858,7 @@ post == put post
 		string imagesPath = Path. Combine(root, "wwwroot", "images");
 		string filePath = Path.Combine(imagesPath, product.Image);
 		
-	 //щоб не було конфліктів	
+ //щоб не було конфліктів	
 		System.IO.File.Delete(filePath);
 	}
 	
@@ -6955,4 +6963,5 @@ _context.Entry(products).State = EntityState.Modified
 
 
 
-
+----------------------------------------------
+05_

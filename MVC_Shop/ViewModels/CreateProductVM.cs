@@ -10,5 +10,7 @@ namespace MVC_Shop.ViewModels
         public int? Amount { get; set; }
         public string? Color { get; set; }
         public IFormFile? Image { get; set; }
+
+        public int? Id { get; set; }
     }
 }
