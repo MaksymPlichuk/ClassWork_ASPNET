@@ -6964,4 +6964,61 @@ _context.Entry(products).State = EntityState.Modified
 
 
 ----------------------------------------------
-05_
+05_Query Params
+
+
+ aside <main>	--	те саме що й <div>
+
+style="object-fit: contain"	--	зберігає пропорції картинки
+
+
+@foreach (var product in Model)
+{
+	<partial name="_ProductCard" model="@product"/>
+}
+
+  _ProductCard	-- View з самою карточкою | як частина списку тому з _
+
+
+ViewModels -> створ класс який матиме дві колекції
+
+  public class HomeVM {
+ 	 public IEnumerable<ProductModel> Products { get; set; } = [];
+ 	 public IEnumerable<CategoryModel> Categories { get; set; } = [];
+  }
+
+@model HomeVM
+
+	і доступатись по Model.Categories Model.Products
+
+
+//Pagination
+
+створ PaginationVM
+
+	і добавляємо його у HomeVM через який витягшужмо всі об'єкти у HTML
+	
+public IActionResult Index( int? category, 
+			[FromQuery]PaginationVM pagination ) {..}
+	
+[FromQuery] -- вичитує данні з URL у об'єкт по назві
+						pageSize pageCount
+						
+
+[1,2,3,4,5,6,7,8].Take(5) -- візбме всі 5					
+[1,2,3,4,5,6,7,8].Skip(5) -- пропустить 5					
+	
+	
+ формула для пагінації
+products = products
+	.Skip(pagination.PageSize * (pagination.Page - 1))
+	.Take(pagination.PageSize); 
+	
+int arr = [1,2,3,4,5,6,8]	
+	PageSize = 4
+	Page = 1
+		arr.Skip(4* 1-1).Take(4)
+
+
+----------------------------------------------
+06_
