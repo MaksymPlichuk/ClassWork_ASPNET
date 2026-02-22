@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MVC_Shop.Data;
 using MVC_Shop.Models;
+using MVC_Shop.ViewModels;
 using System.Diagnostics;
 
 namespace MVC_Shop.Controllers
@@ -8,15 +9,40 @@ namespace MVC_Shop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? c, [FromQuery] PaginationVM pagination)
         {
-            return View();
+            List<CategoryModel> categories = _context.Categories.ToList();
+            IQueryable<ProductModel> products = _context.Products;
+
+            if (c != null && categories.Any(cp => cp.Id == c))
+            {
+                products = products.Where(p => p.CategoryId == c);
+            }
+
+            pagination.PageSize = pagination.PageSize < 0 ? 20 : pagination.PageSize;
+            pagination.PageCount = (int)Math.Ceiling((double)products.Count() / pagination.PageSize);
+            pagination.Page = pagination.Page < 0 || pagination.Page > pagination.PageCount ? 1 : pagination.Page;
+
+            products = products.OrderBy(p=>p.Id)
+                .Skip(pagination.PageSize * (pagination.PageCount-1)).Take(pagination.PageSize);
+
+            var homeVM = new HomeVM
+            {
+                Products = products.AsEnumerable(),
+                Categories = categories.AsEnumerable(),
+                Pagination = pagination,
+                CategoryId = c
+            };
+
+            return View(homeVM);
         }
 
         public IActionResult Privacy()

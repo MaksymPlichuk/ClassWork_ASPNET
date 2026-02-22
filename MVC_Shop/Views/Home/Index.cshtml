@@ -1,8 +1,34 @@
-﻿@{
+﻿@model HomeVM
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex">
+    <aside class="flex-grow-0 border-end p-5">
+        @foreach (var category in Model.Categories)
+        {
+            <a asp-action="Index" asp-route-c="@category.Id" class="d-block mb-2 side-link">@category.Name</a>
+        }
+    </aside>
+    <main class ="flex-grow-1 p-5">
+        <div class="row gap-2 mx-auto">
+            @foreach (var prod in Model.Products)
+            {
+                <partial name="_ProductCard" model="@prod"></partial>
+            }
+        </div>
+        <div>
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#" aria-current="page">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
 </div>

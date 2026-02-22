@@ -6991,18 +6991,32 @@ ViewModels -> створ класс який матиме дві колекці�
 
 	і доступатись по Model.Categories Model.Products
 
+.cshtml				має співпадати у controller
+	<asp-action="Index" asp-route-CATEGORY="@category.id" ../>
+
+.cs
+public IActionResult (int? CATEGORY)	{ ... } 
+
+
 
 //Pagination
 
 створ PaginationVM
+		public class PaginationVM
+    {
+        public int Page { get; set; } = 1;
+        public int PageCount { get; set; } = 1;
+        public int PageSize { get; set; } = 4;
+    }
+
 
 	і добавляємо його у HomeVM через який витягшужмо всі об'єкти у HTML
 	
 public IActionResult Index( int? category, 
 			[FromQuery]PaginationVM pagination ) {..}
 	
-[FromQuery] -- вичитує данні з URL у об'єкт по назві
-						pageSize pageCount
+[FromQuery] -- вичитує данні з URL у об'єкт по назві проперті
+						Page PageCount PageSize
 						
 
 [1,2,3,4,5,6,7,8].Take(5) -- візбме всі 5					
@@ -7021,4 +7035,122 @@ int arr = [1,2,3,4,5,6,8]
 
 
 ----------------------------------------------
-06_
+06_Identity
+
+
+авторизація -- надаггя прав користувачу
+аутентифікація -- перевірка користувача
+
+
+nuGet package Identity:
+		Microsoft.AspNetCore.Identity.EntityFramework Core
+		Microsoft.AspNetCore.Identity.Ul
+
+
+у AppDbContext.cs
+		public class AppDbContext : IdentityDbContext -- добавляє 7 таблиці
+		
+		
+у Program.cs робимо DI
+	
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()	-- уже підключений Identity
+	.AddEntityFrameworkStores<AppDbContext>()	-- вказ який context відповідає за базу
+	.AddDefaultTokenProviders()					-- для генерації токенів
+	.AddDefaultUI();					-- буде побудована сторінка
+
+ можна додати options у яких додаткові параметри для user
+
+ (options => {
+	options. User. RequireUniqueEmail = true;
+	
+	options.Password. RequiredLength = 6;
+	options.Password. RequireDigit = false;
+			.. і тд для розробки все робимо false
+ })
+
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+
+
+IdentityDbContext -- добавляє 7 таблиці
+	AspNetUserClaims	--	true/false
+	AspNetUserLogins	--	звідки залогінився
+	
+	AspNetUserUsers		--	вся інфа про користувача	
+	AspNetUserRoles		--	ролі
+	AspNetRoles			--	ролі
+	AspNetUserTokens	--	зберігає токени (JWT)
+
+
+Models -> UserModel
+	public class UserModel : IdentityUser { -- готова бібліотка
+						успадковує всі властивості з таблиці User
+			пропис властивості які хочемо додати
+			
+		public string? Image {get; set}	
+	}
+
+ Змінюємо на наш клас який хочемо поміяти таблицю
+										//тут
+public class AppDbContext: IdentityDbContext<UserModel>
+						
+						//тут
+builder.Services.AddIdentity<UserModel, IdentityRole>(options..
+
+
+ для роботи з ролями і користувачами витягуємо через у Seeder scope
+ 
+using var scope app.ApplicationServices.CreateScope();
+
+ var userManager = scope.ServiceProvider.GetRequiredService<UserManager<UserRmodel>>();
+ var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>(); I 
+
+ для User треба інший Seeder через IApplicationBuilder
+працюжмо з таблицями через roleManager
+
+
+var admin = new UserModel {...}
+
+userManager.CreateAsync(admin , "pass").Wait()	-- автоматично SaveChanges() і захешує пароль
+userManager. AddToRoleAsync(admin, "admin").Wait();
+
+
+.cshtml
+	<partial	--	дозволяє вивести іншу View
+
+
+ app. MapRazorPages();	--	Razor page	- View + Controller
+	
+add Identity --> add new scaffolded item --> Identity
+	створить папку з View повним налаштуванням login/register
+
+<div class="flex-grow-0">	-- добавить login register кнопки
+	<partial name="_LoginPartial">
+</div>
+	
+	
+Login.cshtml
+	Login.cshtml.cs
+	
+	
+#Mail send
+ Services --> EmailService.cs
+ 
+ _smtpClient = new SmtpCleinet(_host _port)
+ 
+ 
+ IConfiguration configuration
+ 
+_host = configuration.GetSection("SmtpSettings).GetValue<string>("host") -- достає значення з проперті host у appsettings 
+
+
+ створ класс який описує SmptSettings
+			буде вичитувати app.json і перетворювати пропси на шарповські
+	
+	
+----------------------------------------------
+07_
+	
+	
