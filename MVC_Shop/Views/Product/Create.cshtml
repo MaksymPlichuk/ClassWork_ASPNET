@@ -1,39 +1,42 @@
 ﻿@model CreateProductVM
 
-<form class="d-flex flex-column justify-content-center w-75 m-auto"
+<form class="d-flex flex-column justify-content-center w-75 m-auto bg-body-tertiary p-4"
       method="post"
       asp-controller="Product"
       asp-action="Create"
       enctype="multipart/form-data">
     <div>
         <label for="Name" class="form-label mt-4">Name</label>
-        <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input asp-for="Name" type="text" class="form-control" id="Name" name="Name" placeholder="Name">
+        <span asp-validation-for="Name" style="font-size:15px; color:red"></span>
     </div>
     <div>
         <label for="Description" class="form-label mt-4">Description</label>
-        <input type="text" class="form-control" id="Description" name="Description" placeholder="Description">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input asp-for="Description" type="text" class="form-control" id="Description" name="Description" placeholder="Description">
+        <span asp-validation-for="Description" style="font-size:15px; color:red"></span>
     </div>
     <div>
         <label for="Price" class="form-label mt-4">Price</label>
-        <input type="number" class="form-control" id="Price" name="Price" placeholder="1500">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input min="0" asp-for="Price" value="@(Model != null ? Model.Price : 0)" type="number" class="form-control" id="Price" name="Price" >
+        <span asp-validation-for="Price" style="font-size:15px; color:red"></span>
     </div>
     <div>
         <label for="Amount" class="form-label mt-4">Amount</label>
-        <input type="number" class="form-control" id="Amount" name="Amount" aria-describedby="Amount" placeholder="10">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input min="0" asp-for="Amount" value="@(Model != null ? Model.Amount : 0)" type="number" class="form-control" id="Amount" name="Amount">
+        <span asp-validation-for="Amount" style="font-size:15px; color:red"></span>
     </div>
     <div>
         <label for="Color" class="form-label mt-4">Color</label>
-        <input type="text" class="form-control" id="Color" name="Color" aria-describedby="Color">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input asp-for="Color" type="text" class="form-control" id="Color" name="Color" aria-describedby="Color">
+        <span asp-validation-for="Color" style="font-size:15px; color:red"></span>
+    </div>
+    <div>
+        <label for="Image" class="form-label mt-4">Category</label>
+        <select asp-for="CategoryId" asp-items="@Model!.SelectedCategores" class="form-select"></select>
     </div>
     <div>
         <label for="Image" class="form-label mt-4">Image</label>
         <input type="file" accept="image/*" class="form-control" id="Image" name="Image" aria-describedby="Amount">
-        <small hidden id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="mt-3 d-flex justify-content-center">
         <input type="submit" class="btn btn-success w-25 m-auto" value="Add" />

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
 using MVC_Shop.Models;
@@ -21,27 +22,35 @@ namespace MVC_Shop.Controllers
             IEnumerable<ProductModel> products = _context.Products.AsEnumerable();
             return View(products);
         }
-        public IActionResult Categories()
+
+        private async Task<IEnumerable<SelectListItem>> GetSelectCategoriesAsync()
         {
 
-            IEnumerable<CategoryModel> categories = _context.Categories.Include(c => c.Products).AsEnumerable();
-            return View(categories);
+            List<CategoryModel> categories = await _context.Categories.ToListAsync();
+            IEnumerable<SelectListItem> selectCat = categories.Select(c => new SelectListItem(c.Name, c.Id.ToString()));
+            return selectCat;
         }
 
         public async Task<IActionResult> Create()
         {
-            return View();
+            var vm = new CreateProductVM
+            {
+                SelectedCategores = await GetSelectCategoriesAsync()
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] CreateProductVM vm)
         {
-            var categories = _context.Categories.FirstOrDefault();
-
-            if (categories == null)
+            if (!ModelState.IsValid)
             {
-                return View();
+                vm.SelectedCategores = await GetSelectCategoriesAsync();
+                return View(vm);
             }
+
             ProductModel pm = new ProductModel
             {
                 Name = vm.Name,
@@ -49,7 +58,7 @@ namespace MVC_Shop.Controllers
                 Price = vm.Price ?? 0,
                 Amount = vm.Amount ?? 0,
                 Color = vm.Color,
-                Category = categories
+                CategoryId = vm.CategoryId,
             };
 
             if (vm.Image != null)
@@ -120,8 +129,13 @@ namespace MVC_Shop.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update([FromForm] CreateProductVM vm)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
 
             if (vm.Id == null) { return View(); }
 
@@ -133,31 +147,32 @@ namespace MVC_Shop.Controllers
             prod.Amount = vm.Amount ?? 0;
             prod.Color = vm.Color;
 
-            if (prod.Image != null)
+
+            if (vm.Image != null)
             {
-                if (vm.Image != null)
+                string root = Directory.GetCurrentDirectory();
+                if (prod.Image != null)
                 {
-                    string root = Directory.GetCurrentDirectory();
                     string path = Path.Combine(root, "wwwroot", "images", $"{prod.Image}");
 
                     if (System.IO.File.Exists(path))
                     {
                         System.IO.File.Delete(path);
                     }
-
-                    string imagesPath = Path.Combine(root, "wwwroot", "images");
-                    string newName = Guid.NewGuid().ToString();
-                    string ext = Path.GetExtension(vm.Image.FileName);
-                    string newFileName = newName + ext;
-                    string newPath = Path.Combine(imagesPath, newFileName);
-
-                    using var openStream = vm.Image.OpenReadStream();
-                    using var fs = new FileStream(newPath, FileMode.Create, FileAccess.Write);
-                    openStream.CopyTo(fs);
-
-                    prod.Image = newFileName;
                 }
+                string imagesPath = Path.Combine(root, "wwwroot", "images");
+                string newName = Guid.NewGuid().ToString();
+                string ext = Path.GetExtension(vm.Image.FileName);
+                string newFileName = newName + ext;
+                string newPath = Path.Combine(imagesPath, newFileName);
+
+                using var openStream = vm.Image.OpenReadStream();
+                using var fs = new FileStream(newPath, FileMode.Create, FileAccess.Write);
+                openStream.CopyTo(fs);
+
+                prod.Image = newFileName;
             }
+
 
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");

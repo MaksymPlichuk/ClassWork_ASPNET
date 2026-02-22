@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CategoryModel>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Products</th>
+            <th scope="col">
+                <a asp-controller="Category" asp-action="Create"> <i class="bi bi-patch-plus"></i></a>
+                </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr class="table-light">
+                <th scope="row">@category.Id</th>
+                <td>@category.Name</td>
+                <td>@foreach (var prod in category.Products){
+                        <span>"@prod.Name", </span>
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id">
+                        <i class="bi bi-trash3" style="color:lightcoral"></i>
+                    </a>
+                    <a asp-controller="Category" asp-action="Update" asp-route-id="@category.Id">
+                        <i class="bi bi-pencil-fill" style="color:lightgreen"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
