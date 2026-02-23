@@ -7151,6 +7151,56 @@ _host = configuration.GetSection("SmtpSettings).GetValue<string>("host") -- до
 	
 	
 ----------------------------------------------
-07_
+07_Session
+
+
+[Authorize]	--	закриває сторінку тим хто не заавторизований
+
+[Authorize (Roles = "admin")]	--	контроллер лише для тих у кого роль admin
+public class ProductController: Controller
+{
+	private readonly AppDbContext context;
+
+
+//кошик
+
+builder. Services.AddHttpContextAccessor();
+builder. Services.AddSession(options
+ {
+	options. IdleTimeout = TimeSpan.FromHours(1); -- сесія закриється після 1 год
+	options.Cookie.HttpOnly = true;				 -- забороняє працювати з кукі через JS (безпека)
+	options.Cookie.IsEssential = true;			-- ігнорує заброну користувача
 	
+ });
+
+app.UseSession();	--	підключаємо сесію
+
+
+//Services додаємо класс сесію
+public static class SessionService
+{
+ public static string Sessionkey { get; } = "qquryewfjsdfsafjwrhgipqeogjwheifsd";
+}
+
+
+ у HomeController простіше можна черз extension
+
+//List<ProductModel> products1 = new List<ProductModel>();
+//HttpContext.Session.SetString()
+
+
+builder.Services. AddHttpContextAccessor();
+
+
+//CartService
+
+@inject 	--	view може використовувати змінну як у конструкторі
+
+cart service	--	для методів
+
+@if (User.IsInRole("admin")) {
+	<li class="nav-item">
+		<a class="nav-link text-dark"
+	</li>
+	}
 	

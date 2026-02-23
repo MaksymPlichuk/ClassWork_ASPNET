@@ -10,7 +10,7 @@
             <a asp-action="Index" asp-route-c="@category.Id" class="d-block mb-2 side-link">@category.Name</a>
         }
     </aside>
-    <main class ="flex-grow-1 p-5">
+    <main class="flex-grow-1 p-5">
         <div class="row gap-2 mx-auto">
             @foreach (var prod in Model.Products)
             {
@@ -18,8 +18,19 @@
             }
         </div>
         <div>
+           
+
             <nav aria-label="...">
                 <ul class="pagination">
+                     @if (@Model.Pagination.PageCount!=1) {
+                    <li class="page-item">
+                        <a asp-action="Index" asp-route-page="1" asp-route-category="@Model.CategoryId"><i class="bi bi-chevron-double-left"></i></a>
+                    </li>
+                    <li class="page-item">
+                        <a asp-action="Index" asp-route-page="@(Model.Pagination.Page - 1)" asp-route-category="@Model.CategoryId"><i class="bi bi-chevron-left"></i>></a>
+                    </li>
+
+
                     <li class="page-item"><a href="#" class="page-link">Previous</a></li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item active">
@@ -27,8 +38,10 @@
                     </li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    }
                 </ul>
             </nav>
+            
         </div>
     </main>
 </div>
