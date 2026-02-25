@@ -31,8 +31,8 @@ namespace MVC_Shop.Controllers
             pagination.PageCount = (int)Math.Ceiling((double)products.Count() / pagination.PageSize);
             pagination.Page = pagination.Page < 0 || pagination.Page > pagination.PageCount ? 1 : pagination.Page;
 
-            products = products.OrderBy(p=>p.Id)
-                .Skip(pagination.PageSize * (pagination.PageCount-1)).Take(pagination.PageSize);
+            products = products.OrderBy(p => p.Id)
+                .Skip(pagination.PageSize * (pagination.Page - 1)).Take(pagination.PageSize);
 
             var homeVM = new HomeVM
             {
@@ -45,6 +45,13 @@ namespace MVC_Shop.Controllers
             return View(homeVM);
         }
 
+        public async Task<IActionResult> Description(int? id)
+        {
+            List<CategoryModel> categories = _context.Categories.ToList();
+            var product = await _context.Products.FindAsync(id);
+
+            return View(product);
+        }
         public IActionResult Privacy()
         {
             return View();

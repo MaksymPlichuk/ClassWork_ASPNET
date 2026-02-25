@@ -17,31 +17,50 @@
                 <partial name="_ProductCard" model="@prod"></partial>
             }
         </div>
-        <div>
-           
 
+        <div class="mt-4 d-flex  justify-content-center">
             <nav aria-label="...">
                 <ul class="pagination">
-                     @if (@Model.Pagination.PageCount!=1) {
-                    <li class="page-item">
-                        <a asp-action="Index" asp-route-page="1" asp-route-category="@Model.CategoryId"><i class="bi bi-chevron-double-left"></i></a>
-                    </li>
-                    <li class="page-item">
-                        <a asp-action="Index" asp-route-page="@(Model.Pagination.Page - 1)" asp-route-category="@Model.CategoryId"><i class="bi bi-chevron-left"></i>></a>
-                    </li>
+                    @if (Model.Pagination.PageCount != 1)
+                    {
+                        @if (Model.Pagination.Page != 1)
+                        {
+                            <li class="page-item">
+                                <a asp-action="Index" asp-route-page="1" asp-route-c="@Model.CategoryId" class="page-link">
+                                    <i class="bi bi-chevron-double-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a asp-action="Index" asp-route-page="@(Model.Pagination.Page - 1)" asp-route-c="@Model.CategoryId" class="page-link">
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+                        }
 
 
-                    <li class="page-item"><a href="#" class="page-link">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#" aria-current="page">2</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        @for (int i = 1; i < Model.Pagination.PageCount; i++)
+                        {
+                            <li class="page-item @(Model.Pagination.Page == i ? "active" : "")">
+                                <a class="page-link" asp-action="Index" asp-route-c="@Model.CategoryId" asp-route-page="@i" aria-current="page">@i</a>
+                            </li>
+                        }
+
+                        @if (Model.Pagination.Page != Model.Pagination.PageCount)
+                        {
+                            <li class="page-item">
+                                <a asp-action="Index" asp-route-page="@(Model.Pagination.Page + 1)" asp-route-c="@Model.CategoryId" class="page-link">
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a asp-action="Index" asp-route-page="@Model.Pagination.PageCount" asp-route-c="@Model.CategoryId" class="page-link">
+                                    <i class="bi bi-chevron-double-right"></i>
+                                </a>
+                            </li>
+                        }
                     }
                 </ul>
             </nav>
-            
         </div>
     </main>
 </div>
