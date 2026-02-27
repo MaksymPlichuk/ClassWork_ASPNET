@@ -7140,8 +7140,13 @@ Login.cshtml
  
  _smtpClient = new SmtpCleinet(_host _port)
  
+						//цей інтерфейс реалізує цей клас | DI всюди де буде IEmailSender з'являтиметься клас EmailService
+builder.Services.AddScoped<IEmailSender, EmailService>(); 
+
+	усе готове тільки треба прописати клас і SMTP логіку яка імплементує інтерфейс IEmailSender
+
  
- IConfiguration configuration
+ IConfiguration configuration	--	стандартний інтерфейс передастся автоматично
  
 _host = configuration.GetSection("SmtpSettings).GetValue<string>("host") -- достає значення з проперті host у appsettings 
 
@@ -7149,6 +7154,15 @@ _host = configuration.GetSection("SmtpSettings).GetValue<string>("host") -- до
  створ класс який описує SmptSettings
 			буде вичитувати app.json і перетворювати пропси на шарповські
 	
+				//парсить данні з appSettings: SmtpSettings у Однойменний клас з проперті які мають таку саму назву
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));	
+	
+
+public EmailService(IOptions<SmtpSettings> smtpOptions)
+        {
+            var settings = smtpOptions.Value;
+            _host = settings.Host;	
+		..}	
 	
 ----------------------------------------------
 07_Session
@@ -7204,3 +7218,70 @@ cart service	--	для методів
 	</li>
 	}
 	
+----------------------------------------------
+08_Refactoring
+
+Controller	--	приймає запит вимальовує View | віддає готовий результат
+			що зробити як тільки приходять дані | обробка валідація
+
+По структурі з context БД працює repository, виконує всю логіку
+
+		//Повертає void
+public async Task CreateAsync(ProductModel model)
+
+
+підключаємо у Controller _productRepository
+ переносимо функції у Repository
+
+	обов'язково підлючаємо у main.cs 
+					builder.Services.AddScoped<ProductRepository>();
+
+
+public IActionResult Index()
+{
+	var products = _productRepository.
+	GetAllAsync(new PaginationVM { PageSize= 200 });
+	return View(products);
+}
+
+	ООП: Методи Поля Властивості
+поле класу -- дозволяє кожному методу використовувати це поле
+
+
+
+Для зображень ImageService
+
+private readonly IWebHostEnvironment env;	--	вже підключений інтерфейс для навігації
+
+public async Task<string?> SaveImageAsync(IFormFile file, string folder)
+{
+	var types = file.ContentType.Split("/");	--	по HTTP типи складуються з 2 частини image/img
+		if(types.Length != 2 || types[0] != "image")
+						{return null;}
+		
+	string dirPath = Path.Combine( _eny.WebRootPath, "images", folder):
+}
+
+
++Зручно змінювати методи, вони зінються для всіх
+
+
+public class IBaseModel { --	все спільне для models
+}
+
+public class GenericRepository<TEntity>
+	where TEntity : class, IBaseModel	--	можна передати тільки class типу данних який має властивості IBaseModel 
+{.. }
+
+
+public class ProductRepository : GenericRepository<ProductModel>
+
+
+	//для іконок створ окрему property
+public class CategoryModel: BaseModel
+{
+	public string Icon { get; set; } = "bi-robot";
+
+	
+----------------------------------------------
+09_
