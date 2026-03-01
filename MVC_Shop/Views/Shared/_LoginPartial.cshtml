@@ -3,10 +3,14 @@
 
 @inject SignInManager<UserModel> SignInManager
 @inject UserManager<UserModel> UserManager
+@* @inject UserModel UserModel *@
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
+   @*  <li class="nav-item">
+        <img style="max-height: 40px; object-fit: contain" src="@UserModel.Image"/>
+    </li> *@
     <li class="nav-item">
         <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
     </li>

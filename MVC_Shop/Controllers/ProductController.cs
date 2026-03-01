@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
@@ -7,6 +8,7 @@ using MVC_Shop.ViewModels;
 
 namespace MVC_Shop.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;

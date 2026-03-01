@@ -12,6 +12,8 @@ namespace MVC_Shop.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
+
             builder.Entity<CategoryModel>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -45,7 +47,6 @@ namespace MVC_Shop.Data
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
             
-            base.OnModelCreating(builder);
         }
         public DbSet<ProductModel> Products { get; set; }
         public DbSet<CategoryModel> Categories { get; set; }

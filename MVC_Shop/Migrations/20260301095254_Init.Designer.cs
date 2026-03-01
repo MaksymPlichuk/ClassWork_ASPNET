@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Shop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260227092421_testtable")]
-    partial class testtable
+    [Migration("20260301095254_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

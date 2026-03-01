@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
 using MVC_Shop.Data.Initializer;
 using MVC_Shop.Models;
 using MVC_Shop.Repositories;
+using MVC_Shop.Services;
+using MVC_Shop.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,10 @@ builder.Services.AddIdentity<UserModel, IdentityRole>(options =>
 }).AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders()
 .AddDefaultUI();
+
+//де буде IEmailSender з'являтиметься клас EmailService
+builder.Services.AddScoped<IEmailSender, EmailService>();
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
 
 var app = builder.Build();
 
