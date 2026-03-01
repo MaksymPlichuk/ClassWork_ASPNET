@@ -7202,11 +7202,33 @@ public static class SessionService
 //List<ProductModel> products1 = new List<ProductModel>();
 //HttpContext.Session.SetString()
 
+extension у класі SessionService
 
-builder.Services. AddHttpContextAccessor();
+	 public static void Set<T>(this ISession session, T value)
+        {
+            session.SetString(Key, JsonSerializer.Serialize(value));
+        }
+
+        public static T? Get<T>(this ISession session)
+        {
+            var value = session.GetString(Key);
+            if (value == null)
+            {
+                return default;
+            }
+
+            T? result = JsonSerializer.Deserialize<T>(value);
+            return result;
+        }
 
 
-//CartService
+#Для Cart створ окремий controller і VM
+
+
+builder.Services. AddHttpContextAccessor();	-- доступ до HttpContext --> доступ до Session
+
+
+//CartService	--	створюємо для зручності методів у View
 
 @inject 	--	view може використовувати змінну як у конструкторі
 
@@ -7285,3 +7307,54 @@ public class CategoryModel: BaseModel
 	
 ----------------------------------------------
 09_
+
+context.Update	--	змінює state на Modified
+	щоб виконати дії на SaveChanges()
+
+
+public async Task UpdateAsync(TModel model)
+{
+	if(_context.Entry(model).State != EntityState.Modified)	--	перевірить чи змінений state інакше update спрацює не правильно
+	{
+		_context.Set<TModel>().Update(model);
+	}
+	await_context. SaveChangesAsync();
+}
+
+
+//automapper	--	автоматично конвертуватиме об'єкти з 1 типу у інший
+https://automapper.io/
+
+	NuGet: AutoMapper
+ 
+ 
+builder. Services.AddAutoMapper(cfg =>
+{
+	cfg.LicenseKey = ""
+}
+.AppDomain.CurrentDomain.GetAssemblies()); -- автоматично знайде класи
+
+
+	//логіка перетворень об'єктів
+public class ProductMapperProfile : Profile
+{ 
+	public ProductMapperProfile()
+		{
+			//CreateProductVM --> ProductModel
+			
+		  CreateMap<CreateProductVM,ProductModel>()	--	Для кожного перетворення свій CreateMap
+			.ForMember(dest => dest.Image, opt => opt.Ignore());
+						налаштування для власт  що зробити з
+		}
+}
+
+У класі де буде перетворення підключаємо
+	private readonly IMapper _mapper;
+
+
+ProductModel model = _mapper.Map<ProductModel>(vm);
+
+
+backend -- дозволяє об'єднати все в 1 екосистему
+
+Dbeaver PostgreSQL
