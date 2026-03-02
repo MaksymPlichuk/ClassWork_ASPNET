@@ -5,6 +5,14 @@
     <div class="card-body">
         <h5 class="card-title">@Model.Name</h5>
         <h4>@(Model.Amount != 0 ? $"$ {Model.Price}" : "Немає в наявності")</h4>
-        <a asp-action="Description" asp-route-id="@Model.Id" class="btn btn-primary">More</a>
+        <div class="d-flex flex-row">
+            <div class="flex-grow-1">
+                <a asp-action="Description" asp-route-id="@Model.Id" class="btn btn-primary">More</a>
+            </div>
+            <div class="flex-grow-0">
+                <a asp-controller="Cart" asp-action="Add" asp-route-id="@Model.Id" class="text-success" style="font-size:20px"><i class="bi bi-cart"></i></a>
+            </div>
+
+        </div>
     </div>
 </div>

@@ -36,3 +36,11 @@ body {
 .side-link:hover{
     color:black
 }
+
+.badge {
+    position: relative;
+    top: -18px;
+    left: -20px;
+    background-color: mediumseagreen;
+    border-radius: 50%;
+}
