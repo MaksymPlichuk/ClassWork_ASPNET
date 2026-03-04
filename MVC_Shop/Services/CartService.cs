@@ -21,11 +21,34 @@ namespace MVC_Shop.Services
         }
         public static void Increment(ISession session, int id)
         {
+            var items = session.Get<List<CartItemVM>>() ?? new List<CartItemVM>();
+            var item = items.FirstOrDefault(p => p.ProductId == id);
 
+            if (item != null)
+            {
+                item.Count++;
+                session.Set(items);
+            }
         }
         public static void Decrement(ISession session, int id)
         {
+            var items = session.Get<List<CartItemVM>>() ?? new List<CartItemVM>();
+            var item = items.FirstOrDefault(p => p.ProductId == id);
 
+            if (item != null && item.Count > 0)
+            {
+                item.Count--;
+                session.Set(items);
+            }
+            if (item != null && item.Count == 0)
+            {
+                RemoveFromCart(session, id);
+            }
+        }
+        public static List<CartItemVM> GetItems(ISession session)
+        {
+            var items = session.Get<List<CartItemVM>>() ?? new List<CartItemVM>();
+            return items;
         }
         public static bool IsInCart(ISession session, int id)
         {
@@ -38,6 +61,18 @@ namespace MVC_Shop.Services
             var items = session.Get<List<CartItemVM>>() ?? new List<CartItemVM>();
             return items.Count();
         }
+        public static double TotalPrice(ISession session, List<CartProductVM> products)
+        {
+            var total = 0d;
+            var items = session.Get<List<CartItemVM>>() ?? new List<CartItemVM>();
 
+            foreach (var item in items)
+            {
+                var product = products.FirstOrDefault(p => p.Product.Id == item.ProductId);
+                var price = product.Product.Price * product.Count;
+                total += price;
+            }
+            return total;
+        }
     }
 }

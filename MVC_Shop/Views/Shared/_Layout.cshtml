@@ -38,15 +38,22 @@
                             </li>
                         }
                     </ul>
-                    <div class="flex-grow-0">
-                        <a class="text-dark text-decoration-none" asp-action="Index" asp-controller="Cart">
-                            <i class="bi bi-cart4" style="font-size: 1.7em">
-                            </i>
-                            <span class="badge">
-                                @CartService.ItemsCount(ContextAccessor.HttpContext!.Session)
-                            </span>
-                        </a>
-                        <partial name="_LoginPartial">
+                    <div class="flex-grow-0 d-flex flex-row">
+                        <div>
+                            <a class="text-dark text-decoration-none" asp-action="Index" asp-controller="Cart">
+                                <i class="bi bi-cart4" style="font-size: 1.7em">
+                                </i>
+                                <span class="badge">
+                                    @CartService.ItemsCount(ContextAccessor.HttpContext!.Session)
+                                </span>
+                            </a>
+                        </div>
+                        <div>
+                            <partial name="_LoginPartial">
+
+                        </div>
+
+
                     </div>
                 </div>
             </div>
