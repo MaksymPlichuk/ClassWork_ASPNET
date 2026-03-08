@@ -21,6 +21,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<CategoryRepository>();
+
+
 builder.Services.AddIdentity<UserModel, IdentityRole>(options =>
 {
     options.User.RequireUniqueEmail = true;

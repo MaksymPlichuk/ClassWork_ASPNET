@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
 using MVC_Shop.Models;
+using MVC_Shop.Repositories;
 using MVC_Shop.ViewModels;
 
 namespace MVC_Shop.Controllers
@@ -10,15 +11,16 @@ namespace MVC_Shop.Controllers
     [Authorize(Roles = "admin")]
     public class CategoryController : Controller
     {
-        private readonly AppDbContext _context;
 
-        public CategoryController(AppDbContext context)
+        private readonly CategoryRepository _categoryRepository;
+
+        public CategoryController(AppDbContext context, CategoryRepository categoryRepository)
         {
-            _context = context;
+            _categoryRepository = categoryRepository;
         }
         public IActionResult Index()
         {
-            IEnumerable<CategoryModel> categories = _context.Categories.Include(c => c.Products).AsEnumerable();
+            IEnumerable<CategoryModel> categories = _categoryRepository.GetAll();
             return View(categories);
         }
         public async Task<IActionResult> Create()
@@ -32,43 +34,25 @@ namespace MVC_Shop.Controllers
             if (!ModelState.IsValid) { return View(vm); }
 
             var category = new CategoryModel { Name = vm.Name };
-            await _context.Categories.AddAsync(category);
-            await _context.SaveChangesAsync();
+
+            await _categoryRepository.CreateAsync(category);
 
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _categoryRepository.GetByIdAsync(id);
             if (category != null)
             {
-                List<ProductModel> unassignedProds = _context.Products.Where(c => c.CategoryId == id).ToList();
-
-                var res = _context.Categories.Where(c => c.Name == "Unassigned").Any();
-                if (res == false)
-                {
-                    await _context.Categories.AddAsync(new CategoryModel { Name = "Unassigned" });
-                    await _context.SaveChangesAsync();
-                }
-
-                if (unassignedProds.Any())
-                {
-                    var unCat = _context.Categories.Where(c => c.Name == "Unassigned").FirstOrDefault();
-                    foreach (var prod in unassignedProds)
-                    {
-                        prod.CategoryId = unCat.Id;
-                    }
-                }
-                _context.Categories.Remove(category);
-                await _context.SaveChangesAsync();
+                await _categoryRepository.DeleteAsync(category);
             }
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Update(int id)
         {
-            var cat = await _context.Categories.FindAsync(id);
+            var cat = await _categoryRepository.GetByIdAsync(id);
             var formCat = new CreateCategoryVM { Name = cat.Name, Id = cat.Id };
 
             if (cat != null)
@@ -85,12 +69,12 @@ namespace MVC_Shop.Controllers
             if (!ModelState.IsValid) { return View(vm); }
             if (vm.Id == null) { return View(vm); }
 
-            var cat = await _context.Categories.FindAsync(vm.Id);
+            var cat = await _categoryRepository.GetByIdAsync(vm.Id);
 
             if (cat != null)
             {
                 cat.Name = vm.Name;
-                await _context.SaveChangesAsync();
+                await _categoryRepository.UpdateAsync(cat);
             }
             return RedirectToAction("Index");
         }

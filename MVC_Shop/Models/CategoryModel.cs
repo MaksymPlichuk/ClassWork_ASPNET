@@ -1,9 +1,9 @@
 ﻿namespace MVC_Shop.Models
 {
-    public class CategoryModel
+    public class CategoryModel : BaseModel
     {
-        public int Id { get; set; }
         public required string Name { get; set; }
+        public string Icon { get; set; } = "bi bi-robot";
         public List<ProductModel> Products { get; set; } = [];
     }
 }

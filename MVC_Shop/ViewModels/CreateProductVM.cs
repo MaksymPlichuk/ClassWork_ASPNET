@@ -22,7 +22,7 @@ namespace MVC_Shop.ViewModels
         public string? Color { get; set; }
         public IFormFile? Image { get; set; }
 
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         public int CategoryId { get; set; }
         public IEnumerable<SelectListItem> SelectedCategores { get; set; } = [];

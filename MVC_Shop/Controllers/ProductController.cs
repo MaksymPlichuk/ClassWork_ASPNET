@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_Shop.Data;
 using MVC_Shop.Models;
+using MVC_Shop.Repositories;
+using MVC_Shop.Services;
 using MVC_Shop.ViewModels;
 
 namespace MVC_Shop.Controllers
@@ -11,24 +13,27 @@ namespace MVC_Shop.Controllers
     [Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
-        private readonly AppDbContext _context;
 
-        public ProductController(AppDbContext context)
+        private readonly ProductRepository _productRepository;
+        private readonly ImageService _imageService;
+
+        public ProductController(AppDbContext context, ProductRepository productRepository, ImageService imageService)
         {
-            _context = context;
+            _productRepository = productRepository;
+            _imageService = imageService;
         }
 
         public IActionResult Index()
         {
 
-            IEnumerable<ProductModel> products = _context.Products.AsEnumerable();
+            IEnumerable<ProductModel> products = _productRepository.GetAll();
             return View(products);
         }
 
         private async Task<IEnumerable<SelectListItem>> GetSelectCategoriesAsync()
         {
 
-            List<CategoryModel> categories = await _context.Categories.ToListAsync();
+            List<CategoryModel> categories = await _productRepository.GetAllCategories();
             IEnumerable<SelectListItem> selectCat = categories.Select(c => new SelectListItem(c.Name, c.Id.ToString()));
             return selectCat;
         }
@@ -65,47 +70,27 @@ namespace MVC_Shop.Controllers
 
             if (vm.Image != null)
             {
-                var root = Directory.GetCurrentDirectory();
-                var path = Path.Combine(root, "wwwroot", "images");
-
-                var ext = Path.GetExtension(vm.Image.FileName);
-                var name = Guid.NewGuid().ToString();
-
-                var fileName = name + ext;
-                var filePath = Path.Combine(path, fileName);
-
-                using var openStream = vm.Image.OpenReadStream();
-                using var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
-                openStream.CopyTo(fs);
-
-                pm.Image = fileName;
+                pm.Image = await _imageService.SaveImageAsync(vm.Image, "");
             }
-            await _context.Products.AddAsync(pm);
-            await _context.SaveChangesAsync();
+
+            await _productRepository.CreateAsync(pm);
 
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var prod = await _context.Products.FindAsync(id);
+            var prod = await _productRepository.GetByIdAsync(id);
 
             if (prod != null)
             {
 
                 if (prod.Image != null)
                 {
-                    string root = Directory.GetCurrentDirectory();
-                    string path = Path.Combine(root, "wwwroot", "images", $"{prod.Image}");
-
-                    if (System.IO.File.Exists(path))
-                    {
-                        System.IO.File.Delete(path);
-                    }
+                    _imageService.DeleteImage("", prod.Image);
                 }
 
-                _context.Products.Remove(prod);
-                await _context.SaveChangesAsync();
+                _productRepository.DeleteAsync(prod);
 
             }
             return RedirectToAction("Index");
@@ -113,7 +98,7 @@ namespace MVC_Shop.Controllers
 
         public async Task<IActionResult> Update(int id)
         {
-            ProductModel product = _context.Products.FirstOrDefault(p => p.Id == id);
+            ProductModel product = await _productRepository.GetByIdAsync(id);
 
             if (product == null) { return RedirectToAction("Index"); }
 
@@ -141,7 +126,7 @@ namespace MVC_Shop.Controllers
 
             if (vm.Id == null) { return View(); }
 
-            var prod = await _context.Products.FindAsync(vm.Id);
+            var prod = await _productRepository.GetByIdAsync(vm.Id);
 
             prod.Name = vm.Name;
             prod.Description = vm.Description;
@@ -155,28 +140,13 @@ namespace MVC_Shop.Controllers
                 string root = Directory.GetCurrentDirectory();
                 if (prod.Image != null)
                 {
-                    string path = Path.Combine(root, "wwwroot", "images", $"{prod.Image}");
-
-                    if (System.IO.File.Exists(path))
-                    {
-                        System.IO.File.Delete(path);
-                    }
+                    _imageService.DeleteImage("", prod.Image);
                 }
-                string imagesPath = Path.Combine(root, "wwwroot", "images");
-                string newName = Guid.NewGuid().ToString();
-                string ext = Path.GetExtension(vm.Image.FileName);
-                string newFileName = newName + ext;
-                string newPath = Path.Combine(imagesPath, newFileName);
 
-                using var openStream = vm.Image.OpenReadStream();
-                using var fs = new FileStream(newPath, FileMode.Create, FileAccess.Write);
-                openStream.CopyTo(fs);
-
-                prod.Image = newFileName;
+                prod.Image = await _imageService.SaveImageAsync(vm.Image,"");
             }
 
-
-            await _context.SaveChangesAsync();
+            await _productRepository.UpdateAsync(prod);
             return RedirectToAction("Index");
         }
 

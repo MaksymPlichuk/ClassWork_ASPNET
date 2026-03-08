@@ -7,7 +7,12 @@
     <aside class="flex-grow-0 border-end p-5">
         @foreach (var category in Model.Categories)
         {
-            <a asp-action="Index" asp-route-c="@category.Id" class="d-block mb-2 side-link">@category.Name</a>
+            <a asp-action="Index" asp-route-c="@category.Id" class="d-block mb-2 side-link">
+                <div class="d-flex flex-row">
+                    <i class="@category.Icon"></i>
+                    @category.Name
+                </div>
+            </a>
         }
     </aside>
     <main class="flex-grow-1 p-5">

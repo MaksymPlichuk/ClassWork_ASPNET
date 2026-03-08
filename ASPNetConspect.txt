@@ -7246,6 +7246,9 @@ cart service	--	для методів
 Controller	--	приймає запит вимальовує View | віддає готовий результат
 			що зробити як тільки приходять дані | обробка валідація
 
+Service -- BLL Репозиторій праює з БД
+	Всюди де _context у Controller виносимо код у Repository
+
 По структурі з context БД працює repository, виконує всю логіку
 
 		//Повертає void
@@ -7288,12 +7291,28 @@ public async Task<string?> SaveImageAsync(IFormFile file, string folder)
 +Зручно змінювати методи, вони зінються для всіх
 
 
-public class IBaseModel { --	все спільне для models
-}
+public class IBaseModel { --	все спільне для models | важливо для Generic щоб імплементувати у шаблоні
+	public int Id { get; set; }
+ }
+
+    public class BaseModel : IBaseModel
+    {
+        public int Id { get; set; }
+    }
+
+
+ public class CategoryModel : BaseModel			-- видаляємо Id
+    {	
+        public required string Name { get; set; }
+	}
+
 
 public class GenericRepository<TEntity>
 	where TEntity : class, IBaseModel	--	можна передати тільки class типу данних який має властивості IBaseModel 
-{.. }
+					обмежує які типу можуть прйити (class,struct) | Тип обов'язково імплементує інтерфейс --> у нього будуть його методи 
+{
+	_context.Set<TModel>()	-- DbSet який витягне потрібну табличку
+}
 
 
 public class ProductRepository : GenericRepository<ProductModel>
@@ -7342,9 +7361,9 @@ public class ProductMapperProfile : Profile
 		{
 			//CreateProductVM --> ProductModel
 			
-		  CreateMap<CreateProductVM,ProductModel>()	--	Для кожного перетворення свій CreateMap
+		  CreateMap<CreateProductVM,ProductModel>()				--	Для кожного перетворення свій CreateMap
 			.ForMember(dest => dest.Image, opt => opt.Ignore());
-						налаштування для власт  що зробити з
+						налаштування для власт  що зробити з | ігнорувати цю властивість
 		}
 }
 
@@ -7356,5 +7375,9 @@ ProductModel model = _mapper.Map<ProductModel>(vm);
 
 
 backend -- дозволяє об'єднати все в 1 екосистему
+		web apk desktop всі працюватимуть з 1 сервером 
 
+api -- інтерфейс який з'єднує програми через json
+
+aiven -- free host
 Dbeaver PostgreSQL
